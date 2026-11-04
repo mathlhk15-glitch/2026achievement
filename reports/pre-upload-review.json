@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-11-04T18:16:03+09:00",
+  "verdict": "technical checks passed; editorial review remains",
+  "summary": {
+    "documents": 503,
+    "subjects": 231,
+    "standards": 3125,
+    "coveredStandards": 3125,
+    "sections": 7101,
+    "examples": 5348,
+    "exactDuplicatesMerged": 1752,
+    "unmatched": 1,
+    "textDifferences": 74,
+    "ambiguous": 0,
+    "displayCorrectionCount": 16
+  },
+  "draftExamples": 1886,
+  "originalDocxBytesUnchanged": 503,
+  "cleanZipBuild": "passed",
+  "windowsLaunchStop": "passed",
+  "repositorySubpathPreview": "passed",
+  "desktopAndMobilePreview": "passed",
+  "browserErrors": 0,
+  "emptySourceKeepsExistingOutput": "passed",
+  "remoteGitHubDeployment": "not run; repository not yet created",
+  "fullEducationalReview": "not performed",
+  "correctedMathOfficialSource": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W"
+}

@@ -1,0 +1,1428 @@
+{
+  "generatedAt": "2026-11-04T16:56:45+09:00",
+  "addedDocuments": 281,
+  "before": {
+    "documents": 222,
+    "coveredStandards": 2292,
+    "examples": 3363
+  },
+  "after": {
+    "documents": 503,
+    "subjects": 231,
+    "standards": 3125,
+    "coveredStandards": 3125,
+    "sections": 7101,
+    "examples": 5348,
+    "exactDuplicatesMerged": 1752,
+    "unmatched": 1,
+    "textDifferences": 74,
+    "ambiguous": 0
+  },
+  "files": [
+    {
+      "original": "추가 탐구/001_559f7b4e.docx",
+      "copiedTo": "source-docs/추가 탐구/001_559f7b4e.docx",
+      "sha256": "6b1d39274379ab890ca1d3e6bcc59ac8908c6de168cbb8f0a776a6263444ca5a"
+    },
+    {
+      "original": "추가 탐구/002_c03eeb4d.docx",
+      "copiedTo": "source-docs/추가 탐구/002_c03eeb4d.docx",
+      "sha256": "49241837edb4fe87d8ae4715f59a412c32653d8943af0fb0dd3c7f0ea6e111b1"
+    },
+    {
+      "original": "추가 탐구/003_f29fea51.docx",
+      "copiedTo": "source-docs/추가 탐구/003_f29fea51.docx",
+      "sha256": "d6df23d4e7446842a2d4bac26cb5aa49c8179f3292e86668f5c9f998690b9392"
+    },
+    {
+      "original": "추가 탐구/004_780e73b0.docx",
+      "copiedTo": "source-docs/추가 탐구/004_780e73b0.docx",
+      "sha256": "256ee2a8d3e82c5a3fefb994438a237a3e6dd47b65e4249d38606dc54a3ccca1"
+    },
+    {
+      "original": "추가 탐구/005_22e5e643.docx",
+      "copiedTo": "source-docs/추가 탐구/005_22e5e643.docx",
+      "sha256": "145460e60c3bf29e6cf316cf38b113f56c74912af4d978290354b0da5a964256"
+    },
+    {
+      "original": "추가 탐구/006_fa779472.docx",
+      "copiedTo": "source-docs/추가 탐구/006_fa779472.docx",
+      "sha256": "def1b31df205ca0da66c7704fdb8939054c6180dac44f12c62dfa46cf2f39878"
+    },
+    {
+      "original": "추가 탐구/007_aedbee4b.docx",
+      "copiedTo": "source-docs/추가 탐구/007_aedbee4b.docx",
+      "sha256": "e24792a63106e1a7b53007dff5ba57e95177524c208ad08d527849cd2169d13d"
+    },
+    {
+      "original": "추가 탐구/008_b2605138.docx",
+      "copiedTo": "source-docs/추가 탐구/008_b2605138.docx",
+      "sha256": "8aa36ef091599dc41183c0d7ba5eb5c75472afe9961f36dcf1d700ddb7a52ab0"
+    },
+    {
+      "original": "추가 탐구/009_abfc73dd.docx",
+      "copiedTo": "source-docs/추가 탐구/009_abfc73dd.docx",
+      "sha256": "b3f52599730142da821ad50b5d2b306600ce4360760e4b8cedd253974037706d"
+    },
+    {
+      "original": "추가 탐구/010_c6967ad3.docx",
+      "copiedTo": "source-docs/추가 탐구/010_c6967ad3.docx",
+      "sha256": "48997bd09bccb77053ad8bbf352da62ef6a5b467f336f8230f481c21af33007c"
+    },
+    {
+      "original": "추가 탐구/011_83f16c31.docx",
+      "copiedTo": "source-docs/추가 탐구/011_83f16c31.docx",
+      "sha256": "9a992653eb3281848004ddefd011ef9ff0a1f9c8f1962ff132510a38e37e0460"
+    },
+    {
+      "original": "추가 탐구/012_630ba9ce.docx",
+      "copiedTo": "source-docs/추가 탐구/012_630ba9ce.docx",
+      "sha256": "5ff7f5a4a378a7b39c6823b6d00511cf3861c29dc06830775eab884777d53815"
+    },
+    {
+      "original": "추가 탐구/013_357f6733.docx",
+      "copiedTo": "source-docs/추가 탐구/013_357f6733.docx",
+      "sha256": "23a6e3808726b78adbe1bace0fd31b50727dcb311d96037eebc6303c1967d55c"
+    },
+    {
+      "original": "추가 탐구/014_dca0ee2f.docx",
+      "copiedTo": "source-docs/추가 탐구/014_dca0ee2f.docx",
+      "sha256": "859bf546abae4a85817e387827989126b31780e21640568d3e73028c68d3c32c"
+    },
+    {
+      "original": "추가 탐구/015_e2070d2e.docx",
+      "copiedTo": "source-docs/추가 탐구/015_e2070d2e.docx",
+      "sha256": "3c28afe8f6fa137d81a359602890c97e611ab2117388d2307e06a131459fcdd1"
+    },
+    {
+      "original": "추가 탐구/016_3262c04c.docx",
+      "copiedTo": "source-docs/추가 탐구/016_3262c04c.docx",
+      "sha256": "667ae941cd87c382b00a7e37f804e51ead20f52d9a6320a06b99a1892f63bbed"
+    },
+    {
+      "original": "추가 탐구/017_bc817e64.docx",
+      "copiedTo": "source-docs/추가 탐구/017_bc817e64.docx",
+      "sha256": "92c43ad40a7676fd1c1e5bae089377a7ce6ad5f6f8b08639974a0a83ab9a7b7b"
+    },
+    {
+      "original": "추가 탐구/018_fb3c7d46.docx",
+      "copiedTo": "source-docs/추가 탐구/018_fb3c7d46.docx",
+      "sha256": "b006c37879fe5eef3edb6d7a741a8eeb824d0d9f3e85a6028bac77260fb4b003"
+    },
+    {
+      "original": "추가 탐구/019_d9008ca8.docx",
+      "copiedTo": "source-docs/추가 탐구/019_d9008ca8.docx",
+      "sha256": "311f169f907dde7b75cecd1cb19b4d6819c6b256bfede087c0b304e086be1e39"
+    },
+    {
+      "original": "추가 탐구/01_423947709.docx",
+      "copiedTo": "source-docs/추가 탐구/01_423947709.docx",
+      "sha256": "e24792a63106e1a7b53007dff5ba57e95177524c208ad08d527849cd2169d13d"
+    },
+    {
+      "original": "추가 탐구/020_9a6159cc.docx",
+      "copiedTo": "source-docs/추가 탐구/020_9a6159cc.docx",
+      "sha256": "3e71a5060c07109214a3bcf13d832fae1e5fda01e85018c768fc5240102d98d4"
+    },
+    {
+      "original": "추가 탐구/021_104b4644.docx",
+      "copiedTo": "source-docs/추가 탐구/021_104b4644.docx",
+      "sha256": "27d448439a4e082bb44ef463c8a3a1964d784970f09a60c7fea29ecd52db6697"
+    },
+    {
+      "original": "추가 탐구/022_121fef97.docx",
+      "copiedTo": "source-docs/추가 탐구/022_121fef97.docx",
+      "sha256": "c80aff4c02b97faa8078b364a08a08b49cfa6b0238219857506418825988e495"
+    },
+    {
+      "original": "추가 탐구/023_8545e133.docx",
+      "copiedTo": "source-docs/추가 탐구/023_8545e133.docx",
+      "sha256": "fb479ca69d7481dff67ae911189f2dc05af0ab50253c65b919150470fc3cd1b9"
+    },
+    {
+      "original": "추가 탐구/024_aa8114cd.docx",
+      "copiedTo": "source-docs/추가 탐구/024_aa8114cd.docx",
+      "sha256": "a60087b2f8bcf9ac4cd0ac7a74dbcbb11aa558dc2d2344605f9b2364856e4ad2"
+    },
+    {
+      "original": "추가 탐구/025_93dbe8f4.docx",
+      "copiedTo": "source-docs/추가 탐구/025_93dbe8f4.docx",
+      "sha256": "88dd67092a61cc892828e3111abcabf51d543c0d2007353403837d3230ca6240"
+    },
+    {
+      "original": "추가 탐구/026_9683852a.docx",
+      "copiedTo": "source-docs/추가 탐구/026_9683852a.docx",
+      "sha256": "eb5ed1a0eec5de74a61db10dbfa18a4405f1ecd1443ded6c0b8bab3cf5f99c85"
+    },
+    {
+      "original": "추가 탐구/027_f67dfee8.docx",
+      "copiedTo": "source-docs/추가 탐구/027_f67dfee8.docx",
+      "sha256": "fbcfae95280500dee725f82105a4e9cde8d2310919ba796e2ee928d3df994cd4"
+    },
+    {
+      "original": "추가 탐구/028_31fb891a.docx",
+      "copiedTo": "source-docs/추가 탐구/028_31fb891a.docx",
+      "sha256": "0a48e0a78d280e49f153d512d65cba36b87fe78cbe29583c34c084e822686186"
+    },
+    {
+      "original": "추가 탐구/029_2c599d33.docx",
+      "copiedTo": "source-docs/추가 탐구/029_2c599d33.docx",
+      "sha256": "7322b5b15bab357c7edcb94516f800e90dd4ce433f7e7aac2f3df5a99ffce59e"
+    },
+    {
+      "original": "추가 탐구/02_ad33366cd.docx",
+      "copiedTo": "source-docs/추가 탐구/02_ad33366cd.docx",
+      "sha256": "8aa36ef091599dc41183c0d7ba5eb5c75472afe9961f36dcf1d700ddb7a52ab0"
+    },
+    {
+      "original": "추가 탐구/030_8e95ee27.docx",
+      "copiedTo": "source-docs/추가 탐구/030_8e95ee27.docx",
+      "sha256": "89e2570a699874e483c36d484a23756583b5bd097ae52abe25dc5fec76bc754b"
+    },
+    {
+      "original": "추가 탐구/031_602078a3.docx",
+      "copiedTo": "source-docs/추가 탐구/031_602078a3.docx",
+      "sha256": "3e50f21a444d6f9992c1de359a4b61412f1da5a86a55d33d9c0c71e69f5940f9"
+    },
+    {
+      "original": "추가 탐구/032_4abceb5d.docx",
+      "copiedTo": "source-docs/추가 탐구/032_4abceb5d.docx",
+      "sha256": "d30617fca929aed9d773cc04f988c0f0ddfc12759013a4fc06a8480eb974a6bc"
+    },
+    {
+      "original": "추가 탐구/033_6b98b105.docx",
+      "copiedTo": "source-docs/추가 탐구/033_6b98b105.docx",
+      "sha256": "da2b68846c9988100351edc11ff9bf8e676daf9f8b15c1f4adfb54d0705b8564"
+    },
+    {
+      "original": "추가 탐구/034_22626f9b.docx",
+      "copiedTo": "source-docs/추가 탐구/034_22626f9b.docx",
+      "sha256": "2caf04f93e2a7f9169210c9fff295952aebeb3ab79d707673426924d2d8b23ef"
+    },
+    {
+      "original": "추가 탐구/035_5ecae97e.docx",
+      "copiedTo": "source-docs/추가 탐구/035_5ecae97e.docx",
+      "sha256": "ece408c4c45fb1385d2b9866b9d2a6e2cbe6dedbcf2815d6621351dcedced9af"
+    },
+    {
+      "original": "추가 탐구/036_623fc2f3.docx",
+      "copiedTo": "source-docs/추가 탐구/036_623fc2f3.docx",
+      "sha256": "c0fe99fe8d93c483d02f44195d81f60399493df1fe5a12e2e46f47a040bfb4b8"
+    },
+    {
+      "original": "추가 탐구/037_98f1f796.docx",
+      "copiedTo": "source-docs/추가 탐구/037_98f1f796.docx",
+      "sha256": "09e72cee69f66626c891cc3edd351226e6064ccc152322118c97b33092b5b15e"
+    },
+    {
+      "original": "추가 탐구/038_5cb183f1.docx",
+      "copiedTo": "source-docs/추가 탐구/038_5cb183f1.docx",
+      "sha256": "5c166467d4a5bc11ffc46987aaff8827d9f31ea7f0a4bec84f0e3d8d7f8d88c0"
+    },
+    {
+      "original": "추가 탐구/039_63482fd9.docx",
+      "copiedTo": "source-docs/추가 탐구/039_63482fd9.docx",
+      "sha256": "86b0bca776af566b7339a3ae8c1b673287f014d6f6c3a4960d5650b0aa888079"
+    },
+    {
+      "original": "추가 탐구/03_416fa3e49.docx",
+      "copiedTo": "source-docs/추가 탐구/03_416fa3e49.docx",
+      "sha256": "48997bd09bccb77053ad8bbf352da62ef6a5b467f336f8230f481c21af33007c"
+    },
+    {
+      "original": "추가 탐구/040_8acfa048.docx",
+      "copiedTo": "source-docs/추가 탐구/040_8acfa048.docx",
+      "sha256": "cf264b5b16616dd89f15c705912faeb6a21f2ce80c3d29af72461e7d53d2ad67"
+    },
+    {
+      "original": "추가 탐구/041_b853ffb5.docx",
+      "copiedTo": "source-docs/추가 탐구/041_b853ffb5.docx",
+      "sha256": "f2af8ddbd464ce2291641493612fa1485d221ad192efe54ce9bd64329480fe94"
+    },
+    {
+      "original": "추가 탐구/042_c86267fc.docx",
+      "copiedTo": "source-docs/추가 탐구/042_c86267fc.docx",
+      "sha256": "315f7edc9f05832aaa783c2183ad04f2860938f00dca126164e980ddf1613f4e"
+    },
+    {
+      "original": "추가 탐구/043_2c4493af.docx",
+      "copiedTo": "source-docs/추가 탐구/043_2c4493af.docx",
+      "sha256": "682563a4232fffcab6cd1a47a596a6990bf8d7e7df38625fc8ff868536ef66e2"
+    },
+    {
+      "original": "추가 탐구/044_24475abf.docx",
+      "copiedTo": "source-docs/추가 탐구/044_24475abf.docx",
+      "sha256": "d42401156c03b17659a4866cab78006d573a0dcf68d426afce136cccd99407c9"
+    },
+    {
+      "original": "추가 탐구/045_07acc6db.docx",
+      "copiedTo": "source-docs/추가 탐구/045_07acc6db.docx",
+      "sha256": "3cd862a1dafae833f9ce9aa42fbffd6c0c69baa0d70a456f5110c24c7d106780"
+    },
+    {
+      "original": "추가 탐구/046_6bd12ade.docx",
+      "copiedTo": "source-docs/추가 탐구/046_6bd12ade.docx",
+      "sha256": "72274ca5cc40ec620378b549ff9a9ad570d2390dda834410498150bd53d71127"
+    },
+    {
+      "original": "추가 탐구/047_9309c7f4.docx",
+      "copiedTo": "source-docs/추가 탐구/047_9309c7f4.docx",
+      "sha256": "46a2177a911579e8f56ad5638b7cacd07b7cd5c04bb232c0e39ff0b6a80d65a8"
+    },
+    {
+      "original": "추가 탐구/048_0c44f310.docx",
+      "copiedTo": "source-docs/추가 탐구/048_0c44f310.docx",
+      "sha256": "420831d7c708f7be61edf292200c3f82cfb1f72c57fe395e1ca5773d953cda45"
+    },
+    {
+      "original": "추가 탐구/049_95f2f673.docx",
+      "copiedTo": "source-docs/추가 탐구/049_95f2f673.docx",
+      "sha256": "2f2d533450477622609781b563898d02e32c30f3bc103a200e3f6e1ea29cff4e"
+    },
+    {
+      "original": "추가 탐구/04_215cf7d09.docx",
+      "copiedTo": "source-docs/추가 탐구/04_215cf7d09.docx",
+      "sha256": "9a992653eb3281848004ddefd011ef9ff0a1f9c8f1962ff132510a38e37e0460"
+    },
+    {
+      "original": "추가 탐구/050_983f23a7.docx",
+      "copiedTo": "source-docs/추가 탐구/050_983f23a7.docx",
+      "sha256": "3c5f468f0fae75535c59123b17ee424649b941176e1e00cc2ff88464ad91e3c2"
+    },
+    {
+      "original": "추가 탐구/051_3f3d7f2e.docx",
+      "copiedTo": "source-docs/추가 탐구/051_3f3d7f2e.docx",
+      "sha256": "49db8c0780a4f73881491a34eda2bd5e00fc01a8e08a4411f773ebc1562e43d7"
+    },
+    {
+      "original": "추가 탐구/052_bfca35e8.docx",
+      "copiedTo": "source-docs/추가 탐구/052_bfca35e8.docx",
+      "sha256": "ebf06ded883874aa799495bcc5d907eaf4abae419e215c7849c305043d7ad754"
+    },
+    {
+      "original": "추가 탐구/053_36c79575.docx",
+      "copiedTo": "source-docs/추가 탐구/053_36c79575.docx",
+      "sha256": "fa4b2ac88c7314472b84cb89209a888e5bffaa1cd89cff82c8dcd78c113cc6ca"
+    },
+    {
+      "original": "추가 탐구/054_08bf8ce6.docx",
+      "copiedTo": "source-docs/추가 탐구/054_08bf8ce6.docx",
+      "sha256": "170dcbf49fd6a34ced7a442052254eecad477ddcc1473f04a85143929fa52d4b"
+    },
+    {
+      "original": "추가 탐구/055_f06da199.docx",
+      "copiedTo": "source-docs/추가 탐구/055_f06da199.docx",
+      "sha256": "408f978182df40e2fc2e99c15c1eac9d5b46ac8e2b51507a43c11014966ffff3"
+    },
+    {
+      "original": "추가 탐구/056_6ee2c37d.docx",
+      "copiedTo": "source-docs/추가 탐구/056_6ee2c37d.docx",
+      "sha256": "aecfe26191a717e14661e75aadca00b9648d6f1dca23631cbbbeed24b002c51e"
+    },
+    {
+      "original": "추가 탐구/057_7fc1e3e2.docx",
+      "copiedTo": "source-docs/추가 탐구/057_7fc1e3e2.docx",
+      "sha256": "8c47c9d18ba2e97ceb131db461ff1cef4c0f3065598054ead9bb5aa18cdd3093"
+    },
+    {
+      "original": "추가 탐구/058_edd6ced0.docx",
+      "copiedTo": "source-docs/추가 탐구/058_edd6ced0.docx",
+      "sha256": "14da0e006cdb9b9813640f0642da648c04f05c3e24ed68dbed1e53e8dcfd39a9"
+    },
+    {
+      "original": "추가 탐구/059_9c9da192.docx",
+      "copiedTo": "source-docs/추가 탐구/059_9c9da192.docx",
+      "sha256": "37831698ead42fa37fe9e3b213e8cf500abd461f47aabc2f5ec61bf65e46f262"
+    },
+    {
+      "original": "추가 탐구/05_72d836f86.docx",
+      "copiedTo": "source-docs/추가 탐구/05_72d836f86.docx",
+      "sha256": "859bf546abae4a85817e387827989126b31780e21640568d3e73028c68d3c32c"
+    },
+    {
+      "original": "추가 탐구/060_cad440bc.docx",
+      "copiedTo": "source-docs/추가 탐구/060_cad440bc.docx",
+      "sha256": "985f0d378c50dc352529c05f29f8ab6632a70e8676ec6332509e2443fca26ffa"
+    },
+    {
+      "original": "추가 탐구/061_30add01d.docx",
+      "copiedTo": "source-docs/추가 탐구/061_30add01d.docx",
+      "sha256": "1921adc12a16375c3f712f63da830b5ead72db6422e67b1ee2d16923c952bae1"
+    },
+    {
+      "original": "추가 탐구/062_0268fdb8.docx",
+      "copiedTo": "source-docs/추가 탐구/062_0268fdb8.docx",
+      "sha256": "0fa7b668a0a6a80122793d97ff2bb89712b53bcdf7057fdfb153b5a2fa6c416e"
+    },
+    {
+      "original": "추가 탐구/063_2c044632.docx",
+      "copiedTo": "source-docs/추가 탐구/063_2c044632.docx",
+      "sha256": "86099dee097fd4808bfb4aa7cf52922ca61cc82231a29b926a2864c883b7ab03"
+    },
+    {
+      "original": "추가 탐구/064_884de89d.docx",
+      "copiedTo": "source-docs/추가 탐구/064_884de89d.docx",
+      "sha256": "926bfebda1800cbecf91531d547aa82e94b8e019a91a12a988759fafaba4f8ca"
+    },
+    {
+      "original": "추가 탐구/065_4653c8af.docx",
+      "copiedTo": "source-docs/추가 탐구/065_4653c8af.docx",
+      "sha256": "229ac6f2e87b3b66eebf74002bc7e4682917a93025a912ed3ca8757def0a6493"
+    },
+    {
+      "original": "추가 탐구/066_e96d905f.docx",
+      "copiedTo": "source-docs/추가 탐구/066_e96d905f.docx",
+      "sha256": "aec1dbbdcc9ffcde7a0a7f47da7bddf2a8ac7ad985a275a027769a45829fad55"
+    },
+    {
+      "original": "추가 탐구/067_1fd2e8cc.docx",
+      "copiedTo": "source-docs/추가 탐구/067_1fd2e8cc.docx",
+      "sha256": "776a5977a9bd6ed2b9dc767e1f2b304b996a358fc1da8e0705bc0aa3367ba083"
+    },
+    {
+      "original": "추가 탐구/068_e9a65108.docx",
+      "copiedTo": "source-docs/추가 탐구/068_e9a65108.docx",
+      "sha256": "e20f5b6b61bb14f0254b58a071c28a781864b9bead78cac4b53c077355c8cd93"
+    },
+    {
+      "original": "추가 탐구/069_95d65a88.docx",
+      "copiedTo": "source-docs/추가 탐구/069_95d65a88.docx",
+      "sha256": "6ad70353cd09bdb5e8bd955b83cbf47117024b6c3e612acd57c34b59b6c8090d"
+    },
+    {
+      "original": "추가 탐구/06_a1805ce05.docx",
+      "copiedTo": "source-docs/추가 탐구/06_a1805ce05.docx",
+      "sha256": "3c28afe8f6fa137d81a359602890c97e611ab2117388d2307e06a131459fcdd1"
+    },
+    {
+      "original": "추가 탐구/070_03648ac1.docx",
+      "copiedTo": "source-docs/추가 탐구/070_03648ac1.docx",
+      "sha256": "141bab45c32f51c7dc4d2d64b151d26aaa6f8db8192da696a4a70d01107229df"
+    },
+    {
+      "original": "추가 탐구/071_57e56f88.docx",
+      "copiedTo": "source-docs/추가 탐구/071_57e56f88.docx",
+      "sha256": "11f17e77edcf7aa530469a9aa4610143bdc41c15bf591b25ada644324c2c8bc3"
+    },
+    {
+      "original": "추가 탐구/072_8bca2dea.docx",
+      "copiedTo": "source-docs/추가 탐구/072_8bca2dea.docx",
+      "sha256": "b4c9c528eb73f002f4dc89aee807571ba75b63b9428cd08977fcca25cd2d36f2"
+    },
+    {
+      "original": "추가 탐구/073_4f52f6cd.docx",
+      "copiedTo": "source-docs/추가 탐구/073_4f52f6cd.docx",
+      "sha256": "9220b087bbb5f882f35e8e7b1be0f6a3b14bdfd4a5a76ba7376abadbe61a4dcd"
+    },
+    {
+      "original": "추가 탐구/074_bd5a96ee.docx",
+      "copiedTo": "source-docs/추가 탐구/074_bd5a96ee.docx",
+      "sha256": "476397b95e8bf2398ef8f5859c06b8c5feeb52604c9f6d55ab71265fe18faccb"
+    },
+    {
+      "original": "추가 탐구/075_ea48f749.docx",
+      "copiedTo": "source-docs/추가 탐구/075_ea48f749.docx",
+      "sha256": "b89f11ce339de386cbe284ed0d4c4fc2835dc4071fe8f484c3b17272e3b18d56"
+    },
+    {
+      "original": "추가 탐구/076_2c24436f.docx",
+      "copiedTo": "source-docs/추가 탐구/076_2c24436f.docx",
+      "sha256": "e4e24670b2308a3e4f5c329db9b057b87eef29cf72261b357cbcef0f570f6d65"
+    },
+    {
+      "original": "추가 탐구/077_171ddecf.docx",
+      "copiedTo": "source-docs/추가 탐구/077_171ddecf.docx",
+      "sha256": "6fde2ca8d094968dec3f5bf7ee7b003413bf0007679583dac71649fb9c0b5eae"
+    },
+    {
+      "original": "추가 탐구/078_915cf46c.docx",
+      "copiedTo": "source-docs/추가 탐구/078_915cf46c.docx",
+      "sha256": "b9afee7c23a671e13d526f9ba6f5d4dc4729421306857df7fe5892100b662fe7"
+    },
+    {
+      "original": "추가 탐구/079_9222ed32.docx",
+      "copiedTo": "source-docs/추가 탐구/079_9222ed32.docx",
+      "sha256": "e25153e5bff592e4b210ecdb089a973dadf2936b32a8a3c4b90781964b013c18"
+    },
+    {
+      "original": "추가 탐구/07_b03967224.docx",
+      "copiedTo": "source-docs/추가 탐구/07_b03967224.docx",
+      "sha256": "fb479ca69d7481dff67ae911189f2dc05af0ab50253c65b919150470fc3cd1b9"
+    },
+    {
+      "original": "추가 탐구/080_164c7c0d.docx",
+      "copiedTo": "source-docs/추가 탐구/080_164c7c0d.docx",
+      "sha256": "5399e40d8f547a78130571054a9a04e5a1d4b6305660e4773c6581be0784bd6c"
+    },
+    {
+      "original": "추가 탐구/081_2973a5e3.docx",
+      "copiedTo": "source-docs/추가 탐구/081_2973a5e3.docx",
+      "sha256": "286d7094d316e7b293cf924a2f278cf5b262f0b640870cb8c9c5a115c1503f73"
+    },
+    {
+      "original": "추가 탐구/082_2e4cbe56.docx",
+      "copiedTo": "source-docs/추가 탐구/082_2e4cbe56.docx",
+      "sha256": "c2457ce06fcc0075e854f6de3251b686d849a082dcee486700fa9d498f3ed9db"
+    },
+    {
+      "original": "추가 탐구/083_07d3f0d6.docx",
+      "copiedTo": "source-docs/추가 탐구/083_07d3f0d6.docx",
+      "sha256": "0992d90ea2523cf2f9516a197a834a6232f4448acb348977032340689b0d2d9d"
+    },
+    {
+      "original": "추가 탐구/084_dbefc429.docx",
+      "copiedTo": "source-docs/추가 탐구/084_dbefc429.docx",
+      "sha256": "f57f244e4421b0c476051cd8b429c3f5a041117e0917d47bc2f1213a7d0094ea"
+    },
+    {
+      "original": "추가 탐구/085_90193cb1.docx",
+      "copiedTo": "source-docs/추가 탐구/085_90193cb1.docx",
+      "sha256": "1cfa9511e0581c8617dd0feb2429111585d23f202538e66d648b10fb4159fb47"
+    },
+    {
+      "original": "추가 탐구/086_d6512c0a.docx",
+      "copiedTo": "source-docs/추가 탐구/086_d6512c0a.docx",
+      "sha256": "87e07a368fc1edb60a7e5d597ddb2356a30c01665c4089c0047584a842527a15"
+    },
+    {
+      "original": "추가 탐구/087_107add54.docx",
+      "copiedTo": "source-docs/추가 탐구/087_107add54.docx",
+      "sha256": "3c8a99ecf5ffd151481bfc388fa8f493b11758073213a640120d0da2cc934392"
+    },
+    {
+      "original": "추가 탐구/088_51f9f1d5.docx",
+      "copiedTo": "source-docs/추가 탐구/088_51f9f1d5.docx",
+      "sha256": "e3807944db20086ac9cebab30a6e2023921a4cafdf7784eaa3f17df89bd32cbf"
+    },
+    {
+      "original": "추가 탐구/089_3be7f147.docx",
+      "copiedTo": "source-docs/추가 탐구/089_3be7f147.docx",
+      "sha256": "8f4a38059321a5d987227162a2ad789ba4a828ac57a3f5041238b081ebaf310c"
+    },
+    {
+      "original": "추가 탐구/08_0235601ed.docx",
+      "copiedTo": "source-docs/추가 탐구/08_0235601ed.docx",
+      "sha256": "a60087b2f8bcf9ac4cd0ac7a74dbcbb11aa558dc2d2344605f9b2364856e4ad2"
+    },
+    {
+      "original": "추가 탐구/090_cb1a9cb2.docx",
+      "copiedTo": "source-docs/추가 탐구/090_cb1a9cb2.docx",
+      "sha256": "22d438b9bfe0d8e475592827bb7f4fd82766d35b0b0ad5bc9d7d91b8aa56e3b8"
+    },
+    {
+      "original": "추가 탐구/091_032e3f1f.docx",
+      "copiedTo": "source-docs/추가 탐구/091_032e3f1f.docx",
+      "sha256": "294cf015cf3eebfef78f817e4ff310546144e63703d9cf2c3a240cc7345f4351"
+    },
+    {
+      "original": "추가 탐구/092_6074a8e5.docx",
+      "copiedTo": "source-docs/추가 탐구/092_6074a8e5.docx",
+      "sha256": "de03aff1276bcc471fc9a74f2c616bba97a9c3c92dacbbb62f0e7c4fdd7f0dde"
+    },
+    {
+      "original": "추가 탐구/093_51f3b0a3.docx",
+      "copiedTo": "source-docs/추가 탐구/093_51f3b0a3.docx",
+      "sha256": "348f5a9182276620c3a0f5e331055d302ce7a3174ca2065482e27ba01a9843d3"
+    },
+    {
+      "original": "추가 탐구/094_9e693ec0.docx",
+      "copiedTo": "source-docs/추가 탐구/094_9e693ec0.docx",
+      "sha256": "72334cde567490feda6a28006671151ad00c50a94fec82c44eb6804418bb29d5"
+    },
+    {
+      "original": "추가 탐구/095_4e71ce81.docx",
+      "copiedTo": "source-docs/추가 탐구/095_4e71ce81.docx",
+      "sha256": "5948313aa027c957b31292458be7929ccf7831b436a7fdf07581eee51a2c4cf0"
+    },
+    {
+      "original": "추가 탐구/096_6875a8a9.docx",
+      "copiedTo": "source-docs/추가 탐구/096_6875a8a9.docx",
+      "sha256": "6a7f87beebff72a65febfaf49a1a1e7e76dd38ae2cd51731709117fe176f307e"
+    },
+    {
+      "original": "추가 탐구/097_5ef6456c.docx",
+      "copiedTo": "source-docs/추가 탐구/097_5ef6456c.docx",
+      "sha256": "ff7cec9aa2468d65a657cd18ad33884d0ef289c8e53271d76621dbb8fb1a31b6"
+    },
+    {
+      "original": "추가 탐구/098_27e65581.docx",
+      "copiedTo": "source-docs/추가 탐구/098_27e65581.docx",
+      "sha256": "58d0b32b36cfcc1596b9caa6f496a0d9c9c472b1c6a98f6875db4caf685368ce"
+    },
+    {
+      "original": "추가 탐구/099_5c30753e.docx",
+      "copiedTo": "source-docs/추가 탐구/099_5c30753e.docx",
+      "sha256": "026ea1159721ef3f3afeceabf02e28a74f3694dc1b4c1e6e54b03a42627d969f"
+    },
+    {
+      "original": "추가 탐구/09_ecf49bf5a.docx",
+      "copiedTo": "source-docs/추가 탐구/09_ecf49bf5a.docx",
+      "sha256": "7322b5b15bab357c7edcb94516f800e90dd4ce433f7e7aac2f3df5a99ffce59e"
+    },
+    {
+      "original": "추가 탐구/100_acc9c5a2.docx",
+      "copiedTo": "source-docs/추가 탐구/100_acc9c5a2.docx",
+      "sha256": "3aa91ca7c319310c3a60acb66ac6f8e06a1c98f909fb723f5a12f6c4667a123a"
+    },
+    {
+      "original": "추가 탐구/101_2ecbc10d.docx",
+      "copiedTo": "source-docs/추가 탐구/101_2ecbc10d.docx",
+      "sha256": "763533a2de4759a960cc22cebf90a11c2d3b51dcac4b6f14ff0182fc78fa0156"
+    },
+    {
+      "original": "추가 탐구/102_7695b0cf.docx",
+      "copiedTo": "source-docs/추가 탐구/102_7695b0cf.docx",
+      "sha256": "e0008c72af65a1fec69fa7d1cfcd96e2f2b72f13f88059853c49d1ed64cfcc65"
+    },
+    {
+      "original": "추가 탐구/103_a5d73101.docx",
+      "copiedTo": "source-docs/추가 탐구/103_a5d73101.docx",
+      "sha256": "3645a64d1274ba2ce214101512be7c187487ea75317ad44cd36ba0c9d03424c5"
+    },
+    {
+      "original": "추가 탐구/104_8df370af.docx",
+      "copiedTo": "source-docs/추가 탐구/104_8df370af.docx",
+      "sha256": "31b10a79cf1934b7aa0567853707d1f87fbb799ef9e8ccea8339330bf1fb1689"
+    },
+    {
+      "original": "추가 탐구/105_49188f76.docx",
+      "copiedTo": "source-docs/추가 탐구/105_49188f76.docx",
+      "sha256": "0964dd183aba9cdff26147eda095150e37ecd49726840b34d662cd4fedc7572e"
+    },
+    {
+      "original": "추가 탐구/106_173114bb.docx",
+      "copiedTo": "source-docs/추가 탐구/106_173114bb.docx",
+      "sha256": "d15fcef66ecbc4c33053a0b6c22739176412d597ad62141bb7aa4aa47074937f"
+    },
+    {
+      "original": "추가 탐구/107_dbc7a6e3.docx",
+      "copiedTo": "source-docs/추가 탐구/107_dbc7a6e3.docx",
+      "sha256": "97239cb4f0630457f8b81986dc1dfd5303538ac195288432415ff1e31f82d345"
+    },
+    {
+      "original": "추가 탐구/108_8b6eb798.docx",
+      "copiedTo": "source-docs/추가 탐구/108_8b6eb798.docx",
+      "sha256": "0e33aa02e5d02574137d7af0504f419f50e544fc6f27f7f5fdcab8bdb3d1d3ab"
+    },
+    {
+      "original": "추가 탐구/109_293c30a6.docx",
+      "copiedTo": "source-docs/추가 탐구/109_293c30a6.docx",
+      "sha256": "905e356371e8f454c70c137591f1e714c5d6ca4caab66d21aa340c119f5c9c1f"
+    },
+    {
+      "original": "추가 탐구/10_1d91ff9ed.docx",
+      "copiedTo": "source-docs/추가 탐구/10_1d91ff9ed.docx",
+      "sha256": "89e2570a699874e483c36d484a23756583b5bd097ae52abe25dc5fec76bc754b"
+    },
+    {
+      "original": "추가 탐구/110_59a074cb.docx",
+      "copiedTo": "source-docs/추가 탐구/110_59a074cb.docx",
+      "sha256": "8ed98efcc5ea9bdd84b6ab1d80a897ef6bb1a095f70d0b84983ccee37ecbe44d"
+    },
+    {
+      "original": "추가 탐구/111_a28a3839.docx",
+      "copiedTo": "source-docs/추가 탐구/111_a28a3839.docx",
+      "sha256": "d6c328b69373dc01e9137a426a06ae0ed163a7ff4e64a22e2086a9a7639fabf4"
+    },
+    {
+      "original": "추가 탐구/112_7b2ff7de.docx",
+      "copiedTo": "source-docs/추가 탐구/112_7b2ff7de.docx",
+      "sha256": "26dfe3621c7f7353bf009d54c74090f418c736260253ab805fb61eed06c982dc"
+    },
+    {
+      "original": "추가 탐구/113_bb816665.docx",
+      "copiedTo": "source-docs/추가 탐구/113_bb816665.docx",
+      "sha256": "6c9319a209d00aa4018a9364521e4ec43ccdba3478c31d9bbb9ac92171e4104d"
+    },
+    {
+      "original": "추가 탐구/114_a0f0c712.docx",
+      "copiedTo": "source-docs/추가 탐구/114_a0f0c712.docx",
+      "sha256": "4738ce3c2ccd14b567da8e970c5c7d9fc464539986ca0596c8c5a309bea357b6"
+    },
+    {
+      "original": "추가 탐구/115_1f46955c.docx",
+      "copiedTo": "source-docs/추가 탐구/115_1f46955c.docx",
+      "sha256": "8b9f4add881b993da11c485cef1d786225f6f73c78ea6c4e29ae603729cc6992"
+    },
+    {
+      "original": "추가 탐구/116_9cede3db.docx",
+      "copiedTo": "source-docs/추가 탐구/116_9cede3db.docx",
+      "sha256": "aa3fdce816e719f311d35c93835906aad868cb28298b0fba24a0800fb460fe4a"
+    },
+    {
+      "original": "추가 탐구/117_f75f06fb.docx",
+      "copiedTo": "source-docs/추가 탐구/117_f75f06fb.docx",
+      "sha256": "5b957d403e8c72f2eff5cc896b26dfa45761e2e83cef5b090219c52a4d1e0337"
+    },
+    {
+      "original": "추가 탐구/118_bc7eb5c2.docx",
+      "copiedTo": "source-docs/추가 탐구/118_bc7eb5c2.docx",
+      "sha256": "30a147cee90561f2739e10d1df610c2b26e8381040322bb8ce7417aeee13c831"
+    },
+    {
+      "original": "추가 탐구/119_a75e2dc7.docx",
+      "copiedTo": "source-docs/추가 탐구/119_a75e2dc7.docx",
+      "sha256": "68841d0bdae8f622a3da56e7c7611e01bcedeb12b48b42dac5970b6f6b286991"
+    },
+    {
+      "original": "추가 탐구/11_91e52eaa4.docx",
+      "copiedTo": "source-docs/추가 탐구/11_91e52eaa4.docx",
+      "sha256": "3e50f21a444d6f9992c1de359a4b61412f1da5a86a55d33d9c0c71e69f5940f9"
+    },
+    {
+      "original": "추가 탐구/120_f6b6a57c.docx",
+      "copiedTo": "source-docs/추가 탐구/120_f6b6a57c.docx",
+      "sha256": "564db5ab7949c9027b335dc762a67ec7ec38fd5f04d76d8feb198ac9aa11647f"
+    },
+    {
+      "original": "추가 탐구/121_1466201e.docx",
+      "copiedTo": "source-docs/추가 탐구/121_1466201e.docx",
+      "sha256": "54b560b10941b1056169b5e3b7008c65f6167dc94ed1640d22543780de5c5347"
+    },
+    {
+      "original": "추가 탐구/122_c13445e3.docx",
+      "copiedTo": "source-docs/추가 탐구/122_c13445e3.docx",
+      "sha256": "1104fc190842a4c5a51885318f4a39fc9cbf61119cb1943a1fa87d5bd40a6df3"
+    },
+    {
+      "original": "추가 탐구/123_031c9162.docx",
+      "copiedTo": "source-docs/추가 탐구/123_031c9162.docx",
+      "sha256": "f993a5d59518ca9748befc15be75c5420397e40d110ca1fa09bc8c6ee7b96486"
+    },
+    {
+      "original": "추가 탐구/124_940dc396.docx",
+      "copiedTo": "source-docs/추가 탐구/124_940dc396.docx",
+      "sha256": "2087c2feb5944817dd98b47669f85ae9ba5509bf4a6d96bcfe151c0d0324e2a0"
+    },
+    {
+      "original": "추가 탐구/125_368c0072.docx",
+      "copiedTo": "source-docs/추가 탐구/125_368c0072.docx",
+      "sha256": "db587b9e0ca45a8787b3570625a42143905b53d7031d9f00e98388e1fb2e300d"
+    },
+    {
+      "original": "추가 탐구/126_855b7b0b.docx",
+      "copiedTo": "source-docs/추가 탐구/126_855b7b0b.docx",
+      "sha256": "2829282394f441be26ec7b9d79b0b447a12564949ebc6cf961f1eb3faa0da508"
+    },
+    {
+      "original": "추가 탐구/127_248c06da.docx",
+      "copiedTo": "source-docs/추가 탐구/127_248c06da.docx",
+      "sha256": "48c8df9af37bc38f1d7f20944e9476e01fe337041fc9490b89bf24759763bfd0"
+    },
+    {
+      "original": "추가 탐구/128_f7983ea5.docx",
+      "copiedTo": "source-docs/추가 탐구/128_f7983ea5.docx",
+      "sha256": "dded4dd66af48e7c2c5641c37f9a150dd849a6bd2cf171d83b3c19412abda564"
+    },
+    {
+      "original": "추가 탐구/129_380ee6ed.docx",
+      "copiedTo": "source-docs/추가 탐구/129_380ee6ed.docx",
+      "sha256": "4e0cbbf889a92bf451ffa921a3c0f1d04c92471d605e5c0a650205a44ad9bba4"
+    },
+    {
+      "original": "추가 탐구/12_5dce4ba7f.docx",
+      "copiedTo": "source-docs/추가 탐구/12_5dce4ba7f.docx",
+      "sha256": "d30617fca929aed9d773cc04f988c0f0ddfc12759013a4fc06a8480eb974a6bc"
+    },
+    {
+      "original": "추가 탐구/130_cd3af36d.docx",
+      "copiedTo": "source-docs/추가 탐구/130_cd3af36d.docx",
+      "sha256": "61d89fb3d4d5ed01f169ef4da54197a4948d641f0c28df6e465737958be5539a"
+    },
+    {
+      "original": "추가 탐구/131_b0ed3313.docx",
+      "copiedTo": "source-docs/추가 탐구/131_b0ed3313.docx",
+      "sha256": "fe29d80c055b62a015e655e9e4462e0bf619b52f46bc24ce4c4603505ccc3335"
+    },
+    {
+      "original": "추가 탐구/132_6a52512c.docx",
+      "copiedTo": "source-docs/추가 탐구/132_6a52512c.docx",
+      "sha256": "dbcab584256ae87d4b3b40e6f62625708c3ff463b98044c2ca169beff11c1de1"
+    },
+    {
+      "original": "추가 탐구/133_27a43025.docx",
+      "copiedTo": "source-docs/추가 탐구/133_27a43025.docx",
+      "sha256": "74236dd000174d44c20d96766177fc3072a2c265ad57369245547971d2874f4f"
+    },
+    {
+      "original": "추가 탐구/134_926ceca0.docx",
+      "copiedTo": "source-docs/추가 탐구/134_926ceca0.docx",
+      "sha256": "85b843afe350e972ea165b6a080c8f993e58458949517d5b3a4eb97df472c8a2"
+    },
+    {
+      "original": "추가 탐구/135_68ad8ebe.docx",
+      "copiedTo": "source-docs/추가 탐구/135_68ad8ebe.docx",
+      "sha256": "99030421fc72a0a38f5b698dc799cb6ef7df8fdbc86f6477a6510bd37d949a3b"
+    },
+    {
+      "original": "추가 탐구/136_ec4fb792.docx",
+      "copiedTo": "source-docs/추가 탐구/136_ec4fb792.docx",
+      "sha256": "3571cd9bc20db34cf1734ccd7ee6d7980bc4b7700571538c19d570565d681b6a"
+    },
+    {
+      "original": "추가 탐구/137_39c55e82.docx",
+      "copiedTo": "source-docs/추가 탐구/137_39c55e82.docx",
+      "sha256": "e460abc88b844296908318d6c2c6d972ce3ba16d3e98de26a78d487e2dcab024"
+    },
+    {
+      "original": "추가 탐구/138_a92708cb.docx",
+      "copiedTo": "source-docs/추가 탐구/138_a92708cb.docx",
+      "sha256": "3fd3e089f3258bbc12800ff89d77295262ec4aa0ada10ebde2036db66475ca00"
+    },
+    {
+      "original": "추가 탐구/139_b52920b0.docx",
+      "copiedTo": "source-docs/추가 탐구/139_b52920b0.docx",
+      "sha256": "d862b7a07a2f05bcc5af3b1988dc73b0c5a3358096e306afead626bccdab7313"
+    },
+    {
+      "original": "추가 탐구/13_270682566.docx",
+      "copiedTo": "source-docs/추가 탐구/13_270682566.docx",
+      "sha256": "da2b68846c9988100351edc11ff9bf8e676daf9f8b15c1f4adfb54d0705b8564"
+    },
+    {
+      "original": "추가 탐구/140_c36898ea.docx",
+      "copiedTo": "source-docs/추가 탐구/140_c36898ea.docx",
+      "sha256": "ecc4e29ba1444ced59b7cf6ac6c7fd8f492f2d00ca49e055fed02796ed130a7b"
+    },
+    {
+      "original": "추가 탐구/141_17bfcd47.docx",
+      "copiedTo": "source-docs/추가 탐구/141_17bfcd47.docx",
+      "sha256": "3a2559fead80c4ffd65408824195e5bb2df328ad78f57c9bd37ab2380bbc5fa5"
+    },
+    {
+      "original": "추가 탐구/142_0dbf7c1d.docx",
+      "copiedTo": "source-docs/추가 탐구/142_0dbf7c1d.docx",
+      "sha256": "10ea0b7a4a7f6f88243533f0fda7d589385315782ee2ea8f4c0c1b73d3f3912e"
+    },
+    {
+      "original": "추가 탐구/143_8173a0c9.docx",
+      "copiedTo": "source-docs/추가 탐구/143_8173a0c9.docx",
+      "sha256": "75a9abbe932e9b39c7475f9580acd058336a4f56d1e53cb48ff06a1348869d37"
+    },
+    {
+      "original": "추가 탐구/144_16400360.docx",
+      "copiedTo": "source-docs/추가 탐구/144_16400360.docx",
+      "sha256": "7ccc04d628e70503207006229665a337b12fb8159168ec21489c17e3cac71fe5"
+    },
+    {
+      "original": "추가 탐구/145_388529c2.docx",
+      "copiedTo": "source-docs/추가 탐구/145_388529c2.docx",
+      "sha256": "219f10040d32ca33199599b0ffaae045b772cef58252abe91bb7b28bcb7e5d88"
+    },
+    {
+      "original": "추가 탐구/146_5ee3947e.docx",
+      "copiedTo": "source-docs/추가 탐구/146_5ee3947e.docx",
+      "sha256": "3ecdfabea124da8b4903fa703734870b2bd32a10dae38a509d0316ff2c1cb9d6"
+    },
+    {
+      "original": "추가 탐구/147_85b3b99d.docx",
+      "copiedTo": "source-docs/추가 탐구/147_85b3b99d.docx",
+      "sha256": "9af2ae932a8d657ec29618623cc0c6dde986696b9492c08073fc08c1d00657d9"
+    },
+    {
+      "original": "추가 탐구/148_f326b911.docx",
+      "copiedTo": "source-docs/추가 탐구/148_f326b911.docx",
+      "sha256": "32c4a48401f6c5e4fd9d968625d2ffb66ed189abeb7477dee4e36fbf6754ff93"
+    },
+    {
+      "original": "추가 탐구/149_0bb6807b.docx",
+      "copiedTo": "source-docs/추가 탐구/149_0bb6807b.docx",
+      "sha256": "88b2b002d5fd42dd8d9503ed42226865a13e93b21530ce1c4d77a65cd88a397a"
+    },
+    {
+      "original": "추가 탐구/14_70f972e3b.docx",
+      "copiedTo": "source-docs/추가 탐구/14_70f972e3b.docx",
+      "sha256": "2caf04f93e2a7f9169210c9fff295952aebeb3ab79d707673426924d2d8b23ef"
+    },
+    {
+      "original": "추가 탐구/150_8665f43d.docx",
+      "copiedTo": "source-docs/추가 탐구/150_8665f43d.docx",
+      "sha256": "048dbc56856ec5b7c4ecc8517179b6735576bcdc10134bbea40ec61642995f63"
+    },
+    {
+      "original": "추가 탐구/151_de9a02e4.docx",
+      "copiedTo": "source-docs/추가 탐구/151_de9a02e4.docx",
+      "sha256": "71145f45b4774c46ed7895d8b3ff57ee49825b71b1f77746e1ade5780c964f28"
+    },
+    {
+      "original": "추가 탐구/152_1cd364aa.docx",
+      "copiedTo": "source-docs/추가 탐구/152_1cd364aa.docx",
+      "sha256": "6c6a5df0bbb0d989e0923bde732a08b9cb7fd888ac4146d63515cf490238cd01"
+    },
+    {
+      "original": "추가 탐구/153_35a7e557.docx",
+      "copiedTo": "source-docs/추가 탐구/153_35a7e557.docx",
+      "sha256": "27218d59f0c5c2801402021ec40f8c4c0219c72dbf9bd28a170110ae86159b2d"
+    },
+    {
+      "original": "추가 탐구/154_cb455312.docx",
+      "copiedTo": "source-docs/추가 탐구/154_cb455312.docx",
+      "sha256": "7f5a0b95a1c79160f98e1d7a0028609ca566f6365bcc9620047b23ee168468fa"
+    },
+    {
+      "original": "추가 탐구/155_b56556ae.docx",
+      "copiedTo": "source-docs/추가 탐구/155_b56556ae.docx",
+      "sha256": "c73f10b66f1d7ca6830c506dd33df1f2e9eeb2f2e01461986ce53a737ad5d010"
+    },
+    {
+      "original": "추가 탐구/156_f88f0807.docx",
+      "copiedTo": "source-docs/추가 탐구/156_f88f0807.docx",
+      "sha256": "c91c8644c1bb2226793c35c3d0707cb990bf3b48fc17130b5ba276cb2888df20"
+    },
+    {
+      "original": "추가 탐구/157_daf83b9c.docx",
+      "copiedTo": "source-docs/추가 탐구/157_daf83b9c.docx",
+      "sha256": "0ee463a1028c0e169103130fc5048aa94a7279058f5de33c7dea12668c1abb30"
+    },
+    {
+      "original": "추가 탐구/158_8d85ef5e.docx",
+      "copiedTo": "source-docs/추가 탐구/158_8d85ef5e.docx",
+      "sha256": "05f81e697ed82c6f61c917bf8401364d7a2622dd87d3bec7c97aba6dedfacde4"
+    },
+    {
+      "original": "추가 탐구/159_b53405d5.docx",
+      "copiedTo": "source-docs/추가 탐구/159_b53405d5.docx",
+      "sha256": "500ad514d20f1ad3471aebddf031311bebcaab650a85df09e7dbe6fcef7feebd"
+    },
+    {
+      "original": "추가 탐구/15_3a8775e3f.docx",
+      "copiedTo": "source-docs/추가 탐구/15_3a8775e3f.docx",
+      "sha256": "ece408c4c45fb1385d2b9866b9d2a6e2cbe6dedbcf2815d6621351dcedced9af"
+    },
+    {
+      "original": "추가 탐구/160_26c6e301.docx",
+      "copiedTo": "source-docs/추가 탐구/160_26c6e301.docx",
+      "sha256": "8cf5b27c80b540f6736d5465e6195305c57f4c13329443cdec36d46bcd6540f2"
+    },
+    {
+      "original": "추가 탐구/161_e8e1ec28.docx",
+      "copiedTo": "source-docs/추가 탐구/161_e8e1ec28.docx",
+      "sha256": "ad6e78f28406811db145acace125df1229ca65257e3437c2b7b74c8c3f15ab4e"
+    },
+    {
+      "original": "추가 탐구/162_95c25bf3.docx",
+      "copiedTo": "source-docs/추가 탐구/162_95c25bf3.docx",
+      "sha256": "18aaa60e3035e7cf0ff6eb12018b778fc5280a16fe51849afd4463a07b48ed95"
+    },
+    {
+      "original": "추가 탐구/163_00cedbcd.docx",
+      "copiedTo": "source-docs/추가 탐구/163_00cedbcd.docx",
+      "sha256": "dedcb438cbe14c67abc3304e082c3a120d6b6fad6713f9705766f84bf8f7ca44"
+    },
+    {
+      "original": "추가 탐구/164_b447ce7c.docx",
+      "copiedTo": "source-docs/추가 탐구/164_b447ce7c.docx",
+      "sha256": "bc36386ea351198467b7c3186e9945fe033acd89e23721c64a3b49f87a47a8a3"
+    },
+    {
+      "original": "추가 탐구/165_d4f23aed.docx",
+      "copiedTo": "source-docs/추가 탐구/165_d4f23aed.docx",
+      "sha256": "27763d9a0f6b831ffacb4017029d68a33baf244a7286a6f824e36077c5584f60"
+    },
+    {
+      "original": "추가 탐구/166_6de73335.docx",
+      "copiedTo": "source-docs/추가 탐구/166_6de73335.docx",
+      "sha256": "4f345c7c9543894bde0ffa20603dc9d8764161cb84d8919d0c237ba2850630f9"
+    },
+    {
+      "original": "추가 탐구/167_cefbe876.docx",
+      "copiedTo": "source-docs/추가 탐구/167_cefbe876.docx",
+      "sha256": "b5c0e696e9c91a806ada43fb5821fc08ee0a3bd99c24444404ebfff1d52a3fb2"
+    },
+    {
+      "original": "추가 탐구/168_3faceac2.docx",
+      "copiedTo": "source-docs/추가 탐구/168_3faceac2.docx",
+      "sha256": "7504c146c35c5683ce1c0533fa9cff10c23c486cc1ccd10cc7210e647db18db3"
+    },
+    {
+      "original": "추가 탐구/169_ad242b54.docx",
+      "copiedTo": "source-docs/추가 탐구/169_ad242b54.docx",
+      "sha256": "9ba6b2f6d012da7f26f93134ce6fa005d521255c98d45878cc54038619a3a791"
+    },
+    {
+      "original": "추가 탐구/16_0cd28eb79.docx",
+      "copiedTo": "source-docs/추가 탐구/16_0cd28eb79.docx",
+      "sha256": "c0fe99fe8d93c483d02f44195d81f60399493df1fe5a12e2e46f47a040bfb4b8"
+    },
+    {
+      "original": "추가 탐구/170_714b651d.docx",
+      "copiedTo": "source-docs/추가 탐구/170_714b651d.docx",
+      "sha256": "bb13bf868d05c8b2e15d48a48200a9a13fd637916680758be9c0b0f59fca1fbf"
+    },
+    {
+      "original": "추가 탐구/171_d1267063.docx",
+      "copiedTo": "source-docs/추가 탐구/171_d1267063.docx",
+      "sha256": "84cf5ed208a08bb7f3ca956fa4994ded98d9bd929f87362b37dc80c242804193"
+    },
+    {
+      "original": "추가 탐구/172_ae07fc43.docx",
+      "copiedTo": "source-docs/추가 탐구/172_ae07fc43.docx",
+      "sha256": "0f1f476d94b5298f74670951716c67c0de7807211adbd6bbcf6ecaac38553268"
+    },
+    {
+      "original": "추가 탐구/173_a39ddfc4.docx",
+      "copiedTo": "source-docs/추가 탐구/173_a39ddfc4.docx",
+      "sha256": "bd4c52f5be54b88be5aedfd0de236338e9b41827363ee918550756a5e1a5429b"
+    },
+    {
+      "original": "추가 탐구/174_70fee540.docx",
+      "copiedTo": "source-docs/추가 탐구/174_70fee540.docx",
+      "sha256": "1d01fe745aa01780dd14119b13d717a43043ca41d6ba6b374ee4cd2686772b53"
+    },
+    {
+      "original": "추가 탐구/175_09bda341.docx",
+      "copiedTo": "source-docs/추가 탐구/175_09bda341.docx",
+      "sha256": "3fb61b39deddb066ed9c87f10e46f1d756b2d7098fd171aa8bf1703bf4b5303d"
+    },
+    {
+      "original": "추가 탐구/176_bec032b4.docx",
+      "copiedTo": "source-docs/추가 탐구/176_bec032b4.docx",
+      "sha256": "cc163fd69237e272322bfd9b678d7618a594c07eaa1bbe6e7b32ea375b6bdba9"
+    },
+    {
+      "original": "추가 탐구/177_59af6530.docx",
+      "copiedTo": "source-docs/추가 탐구/177_59af6530.docx",
+      "sha256": "2c65cdb8b2b49961a33c355bfd366aefc9ecbdf688e240cde537bce764f16d1a"
+    },
+    {
+      "original": "추가 탐구/178_325d1a56.docx",
+      "copiedTo": "source-docs/추가 탐구/178_325d1a56.docx",
+      "sha256": "e48aa6132c5662e49deb54a4d14a0547cdbe91d5f99927a40a18c7049f15b3bf"
+    },
+    {
+      "original": "추가 탐구/179_6a254d4c.docx",
+      "copiedTo": "source-docs/추가 탐구/179_6a254d4c.docx",
+      "sha256": "641ea979c63ab0c94b420ce95a8949c4c5f99f0544e33fe308213e40e939cfc6"
+    },
+    {
+      "original": "추가 탐구/17_4659db068.docx",
+      "copiedTo": "source-docs/추가 탐구/17_4659db068.docx",
+      "sha256": "09e72cee69f66626c891cc3edd351226e6064ccc152322118c97b33092b5b15e"
+    },
+    {
+      "original": "추가 탐구/180_aacd7062.docx",
+      "copiedTo": "source-docs/추가 탐구/180_aacd7062.docx",
+      "sha256": "a3ca70040872300efad89537fc7ef80fe696773442691e31b2b84995f937c019"
+    },
+    {
+      "original": "추가 탐구/181_f7f415ee.docx",
+      "copiedTo": "source-docs/추가 탐구/181_f7f415ee.docx",
+      "sha256": "8a257ec8d098ddc591f333ae31b8aae714b5766cebd5dd54a796b37baa03631d"
+    },
+    {
+      "original": "추가 탐구/182_661655ed.docx",
+      "copiedTo": "source-docs/추가 탐구/182_661655ed.docx",
+      "sha256": "e1ecd8a5a06d15b21d46e011bb380512653cb87f9921169f4486a2ba4e8537d5"
+    },
+    {
+      "original": "추가 탐구/183_cf471e56.docx",
+      "copiedTo": "source-docs/추가 탐구/183_cf471e56.docx",
+      "sha256": "f6df2269875e213746fbdf8add7aca2a4f99548347b25a35fd99dba1725ebf62"
+    },
+    {
+      "original": "추가 탐구/184_ca8b62e1.docx",
+      "copiedTo": "source-docs/추가 탐구/184_ca8b62e1.docx",
+      "sha256": "48e94082615bd60592bef4e71d2e21f86f74c169090df9d36e75752ed6c59ba8"
+    },
+    {
+      "original": "추가 탐구/185_c945214d.docx",
+      "copiedTo": "source-docs/추가 탐구/185_c945214d.docx",
+      "sha256": "5dfa7776c4e445723fe0b83588dd6b7c1839b46d3e77bf9a2d7bb2e74803228e"
+    },
+    {
+      "original": "추가 탐구/186_64b4fd32.docx",
+      "copiedTo": "source-docs/추가 탐구/186_64b4fd32.docx",
+      "sha256": "7efa996c64e733c9f2f3d9fa7714b840724fea2162e93c2143f05c8eeff7c7ee"
+    },
+    {
+      "original": "추가 탐구/187_cca5855f.docx",
+      "copiedTo": "source-docs/추가 탐구/187_cca5855f.docx",
+      "sha256": "9118b925301ff4655683aeef11d77fa8ad76bfe0dbf42a9e47017dcbdc7838b7"
+    },
+    {
+      "original": "추가 탐구/188_9b82a8ba.docx",
+      "copiedTo": "source-docs/추가 탐구/188_9b82a8ba.docx",
+      "sha256": "3585cc4175e644424b6e8af2978dcc482e2d3e531fbc788581969599633a6d22"
+    },
+    {
+      "original": "추가 탐구/189_fdf8ed5e.docx",
+      "copiedTo": "source-docs/추가 탐구/189_fdf8ed5e.docx",
+      "sha256": "e5e5963b0156585396e13bf5a6ef1ab2d2a23c2770e74a7f6a1248ca42c1d5da"
+    },
+    {
+      "original": "추가 탐구/18_8e978c8e8.docx",
+      "copiedTo": "source-docs/추가 탐구/18_8e978c8e8.docx",
+      "sha256": "5c166467d4a5bc11ffc46987aaff8827d9f31ea7f0a4bec84f0e3d8d7f8d88c0"
+    },
+    {
+      "original": "추가 탐구/190_70023410.docx",
+      "copiedTo": "source-docs/추가 탐구/190_70023410.docx",
+      "sha256": "a742a1283eca2f468b2733f83362a38e6d40c11150e12a5c086269cdf7249b17"
+    },
+    {
+      "original": "추가 탐구/191_abc8c417.docx",
+      "copiedTo": "source-docs/추가 탐구/191_abc8c417.docx",
+      "sha256": "241caacddf3e7077f36d494b367386ceed7d91f2233a120f08de1d5ea25c4ab0"
+    },
+    {
+      "original": "추가 탐구/192_e2fca69e.docx",
+      "copiedTo": "source-docs/추가 탐구/192_e2fca69e.docx",
+      "sha256": "99292e306cfbe2c5fa81428a643d2091f22c604c528f5641b295a106638f6393"
+    },
+    {
+      "original": "추가 탐구/193_702f5a40.docx",
+      "copiedTo": "source-docs/추가 탐구/193_702f5a40.docx",
+      "sha256": "7f841a73b07ea50f745a1fee5eae973fca6f40f2321da4123ab4431e9a74e324"
+    },
+    {
+      "original": "추가 탐구/194_0c39ad89.docx",
+      "copiedTo": "source-docs/추가 탐구/194_0c39ad89.docx",
+      "sha256": "e3b0427779cefe4182f23444cb30ef09a8d7ce6d6155586346178baeb69161cf"
+    },
+    {
+      "original": "추가 탐구/195_8fea4126.docx",
+      "copiedTo": "source-docs/추가 탐구/195_8fea4126.docx",
+      "sha256": "9f0bb6563330acc234943ef999708ab167947d4106af130e8807097fe8d477cc"
+    },
+    {
+      "original": "추가 탐구/196_1eb178ba.docx",
+      "copiedTo": "source-docs/추가 탐구/196_1eb178ba.docx",
+      "sha256": "9095c83ec9271347fa2c8515df89147ce811389885901329d3357ce405a8a890"
+    },
+    {
+      "original": "추가 탐구/197_1610a6d3.docx",
+      "copiedTo": "source-docs/추가 탐구/197_1610a6d3.docx",
+      "sha256": "5322266968e2ab69743d8c5837ec2dbe9f34f644899f5fcd664e1d50d30a53a0"
+    },
+    {
+      "original": "추가 탐구/198_5d45fb5c.docx",
+      "copiedTo": "source-docs/추가 탐구/198_5d45fb5c.docx",
+      "sha256": "174ccf7c8c6b3798646086f756e8622949e66ee0bea8c1e00c1b748b4817784c"
+    },
+    {
+      "original": "추가 탐구/199_88bf4c32.docx",
+      "copiedTo": "source-docs/추가 탐구/199_88bf4c32.docx",
+      "sha256": "e15ae63484ad3462ce2e31c71215f6ea1fa18fe58ad24066fe7eeb576fa7f513"
+    },
+    {
+      "original": "추가 탐구/19_9068c33fd.docx",
+      "copiedTo": "source-docs/추가 탐구/19_9068c33fd.docx",
+      "sha256": "86b0bca776af566b7339a3ae8c1b673287f014d6f6c3a4960d5650b0aa888079"
+    },
+    {
+      "original": "추가 탐구/200_7162aa43.docx",
+      "copiedTo": "source-docs/추가 탐구/200_7162aa43.docx",
+      "sha256": "c53223b03d2af6626bf09147d00636c39bac59cd2658039006f7557ce866be85"
+    },
+    {
+      "original": "추가 탐구/201_b2e776c0.docx",
+      "copiedTo": "source-docs/추가 탐구/201_b2e776c0.docx",
+      "sha256": "2a1b5c8b035f7685909bb7cb33db334afc5c737fad414e5bd3ae49568de65aca"
+    },
+    {
+      "original": "추가 탐구/202_703d4a8f.docx",
+      "copiedTo": "source-docs/추가 탐구/202_703d4a8f.docx",
+      "sha256": "5b4645bb35860ac487ef906364b40c295626f62c2073490d285eb113014e0073"
+    },
+    {
+      "original": "추가 탐구/203_b57d688d.docx",
+      "copiedTo": "source-docs/추가 탐구/203_b57d688d.docx",
+      "sha256": "ccff223321cc13814b5080c0eb2c111127e1065b7e44ba4cd2163e5a2427a53f"
+    },
+    {
+      "original": "추가 탐구/204_940f5b86.docx",
+      "copiedTo": "source-docs/추가 탐구/204_940f5b86.docx",
+      "sha256": "29f4246863df072782b4ec4029f90a585bf34faa36c349032e4974933b9e5b27"
+    },
+    {
+      "original": "추가 탐구/205_4146f226.docx",
+      "copiedTo": "source-docs/추가 탐구/205_4146f226.docx",
+      "sha256": "617f52f2d9fc9ba0a2dfab010fb3e1f116308ef498cf7e2b8f75651f17a5d04c"
+    },
+    {
+      "original": "추가 탐구/206_d2efe666.docx",
+      "copiedTo": "source-docs/추가 탐구/206_d2efe666.docx",
+      "sha256": "3a87fe16be550d590428c38e46d2f326e1ecb19184e2ed29aab9d1a746ec6c38"
+    },
+    {
+      "original": "추가 탐구/207_d260c497.docx",
+      "copiedTo": "source-docs/추가 탐구/207_d260c497.docx",
+      "sha256": "9d97f40d3a611bc13c627e21c47372f0de5262cbf0fac80f47e90d0fa523201a"
+    },
+    {
+      "original": "추가 탐구/208_bbf9d1fb.docx",
+      "copiedTo": "source-docs/추가 탐구/208_bbf9d1fb.docx",
+      "sha256": "c3e1b7854525ccdaa24c6846bb62d6047804ff486f07c9b6e97a68725b01b1f6"
+    },
+    {
+      "original": "추가 탐구/209_e35f53c6.docx",
+      "copiedTo": "source-docs/추가 탐구/209_e35f53c6.docx",
+      "sha256": "c8671d81b1acb663719f34fd5d03aa768d04bc7456d556914d36dab69574b952"
+    },
+    {
+      "original": "추가 탐구/20_14035227d.docx",
+      "copiedTo": "source-docs/추가 탐구/20_14035227d.docx",
+      "sha256": "cf264b5b16616dd89f15c705912faeb6a21f2ce80c3d29af72461e7d53d2ad67"
+    },
+    {
+      "original": "추가 탐구/210_0a68b40b.docx",
+      "copiedTo": "source-docs/추가 탐구/210_0a68b40b.docx",
+      "sha256": "09cf29691151eac9bdcf81cd0ed68b4570a38fbda3f880baa6d6c4311f9d683b"
+    },
+    {
+      "original": "추가 탐구/211_29457cc9.docx",
+      "copiedTo": "source-docs/추가 탐구/211_29457cc9.docx",
+      "sha256": "cc51737cd4ddb454ce48730315db5d4e749d0f96057c81bb62eda189bddad628"
+    },
+    {
+      "original": "추가 탐구/212_3c3267fe.docx",
+      "copiedTo": "source-docs/추가 탐구/212_3c3267fe.docx",
+      "sha256": "a2155fa58b229cd37d427356a5c4136bd5f15a891cf028b9cd0d12ee58c3afbb"
+    },
+    {
+      "original": "추가 탐구/213_15db2c3a.docx",
+      "copiedTo": "source-docs/추가 탐구/213_15db2c3a.docx",
+      "sha256": "d9077cd6921a3832718d1195ba3ca3967b68a601e950471ad38e53e57391d99b"
+    },
+    {
+      "original": "추가 탐구/214_47299a0f.docx",
+      "copiedTo": "source-docs/추가 탐구/214_47299a0f.docx",
+      "sha256": "ccb92fb873d8369342dbe0dce67a0db5f43d0da105753832d41c16da0f53e196"
+    },
+    {
+      "original": "추가 탐구/215_158088de.docx",
+      "copiedTo": "source-docs/추가 탐구/215_158088de.docx",
+      "sha256": "fb7fdf271004ad214704eebf3c40b9f7cba25670f3965cabbc095f285daba58b"
+    },
+    {
+      "original": "추가 탐구/216_811a7fb0.docx",
+      "copiedTo": "source-docs/추가 탐구/216_811a7fb0.docx",
+      "sha256": "d94019c1ff7a28943afd9131fa0e3e56148537626234e2907713632a79702439"
+    },
+    {
+      "original": "추가 탐구/217_43f955b2.docx",
+      "copiedTo": "source-docs/추가 탐구/217_43f955b2.docx",
+      "sha256": "b70f22b5369decc8b09658b148943dcf658e01e32cda29430b0594dd633a3098"
+    },
+    {
+      "original": "추가 탐구/218_59b3a700.docx",
+      "copiedTo": "source-docs/추가 탐구/218_59b3a700.docx",
+      "sha256": "fdb7988b46c6b6df8cd3712e528cb745cdff26e22aba90a6f0981bbeb64c6b32"
+    },
+    {
+      "original": "추가 탐구/219_58d365b2.docx",
+      "copiedTo": "source-docs/추가 탐구/219_58d365b2.docx",
+      "sha256": "1f98d8b0e6c5ab951042c63923fc4c48f6f13b1015cef6c723ec687839e4853f"
+    },
+    {
+      "original": "추가 탐구/21_1a2af4afb.docx",
+      "copiedTo": "source-docs/추가 탐구/21_1a2af4afb.docx",
+      "sha256": "f2af8ddbd464ce2291641493612fa1485d221ad192efe54ce9bd64329480fe94"
+    },
+    {
+      "original": "추가 탐구/220_9ce63210.docx",
+      "copiedTo": "source-docs/추가 탐구/220_9ce63210.docx",
+      "sha256": "1443bf4eaab76a2544914e0a20cf6c0ac44ed81fca6803659e8891e83d82f861"
+    },
+    {
+      "original": "추가 탐구/221_64a6da4c.docx",
+      "copiedTo": "source-docs/추가 탐구/221_64a6da4c.docx",
+      "sha256": "c176b274014095124fb3ef41cd6dc5a1d3239392c3f245164cf5a95abb112cff"
+    },
+    {
+      "original": "추가 탐구/222_3c53c3e2.docx",
+      "copiedTo": "source-docs/추가 탐구/222_3c53c3e2.docx",
+      "sha256": "6153a78ea35f18930104d03800e88194af2b6985ca72de3f8f88bfcede8cefe4"
+    },
+    {
+      "original": "추가 탐구/223_097f42ff.docx",
+      "copiedTo": "source-docs/추가 탐구/223_097f42ff.docx",
+      "sha256": "7f7fa58c897666a7f1f4a7fe5ef5dac9fbaf153e16630bc9f45e14625dd79d54"
+    },
+    {
+      "original": "추가 탐구/224_2516846b.docx",
+      "copiedTo": "source-docs/추가 탐구/224_2516846b.docx",
+      "sha256": "415d03c754a8b0142f707d282c9eaf99c12c6cc47e2b436f5137f9dc0d659ff5"
+    },
+    {
+      "original": "추가 탐구/225_dbd62414.docx",
+      "copiedTo": "source-docs/추가 탐구/225_dbd62414.docx",
+      "sha256": "e4f99e4d7321e73e1927d2b3ad1b4ca7af70de90f33650cb512bc32b84e33576"
+    },
+    {
+      "original": "추가 탐구/226_0d0d629a.docx",
+      "copiedTo": "source-docs/추가 탐구/226_0d0d629a.docx",
+      "sha256": "70c04f604b384ca60af5ff1f9e4f37f6238f2848d903df447d26af1ddc65c854"
+    },
+    {
+      "original": "추가 탐구/227_4c54c761.docx",
+      "copiedTo": "source-docs/추가 탐구/227_4c54c761.docx",
+      "sha256": "32e3e1a0fc9e71a1ed42999e796bb457aae381db897f7af7ddc60b3e0553de40"
+    },
+    {
+      "original": "추가 탐구/228_82400584.docx",
+      "copiedTo": "source-docs/추가 탐구/228_82400584.docx",
+      "sha256": "4e8f5e6ffb83db33b0cd3226559e33d0cf2b0184899c68a975ee1e9d93003d9d"
+    },
+    {
+      "original": "추가 탐구/229_2555c96e.docx",
+      "copiedTo": "source-docs/추가 탐구/229_2555c96e.docx",
+      "sha256": "bc61cad2283e6eebbaf1fa41d86c3fb504077688b29330626cb79c90ce27a208"
+    },
+    {
+      "original": "추가 탐구/22_2f58a2fcd.docx",
+      "copiedTo": "source-docs/추가 탐구/22_2f58a2fcd.docx",
+      "sha256": "49db8c0780a4f73881491a34eda2bd5e00fc01a8e08a4411f773ebc1562e43d7"
+    },
+    {
+      "original": "추가 탐구/230_75f90e5b.docx",
+      "copiedTo": "source-docs/추가 탐구/230_75f90e5b.docx",
+      "sha256": "ec9ddd8265dfe726b8f23d738676751c4aca093fe54efb0da1af9f164ff88ae7"
+    },
+    {
+      "original": "추가 탐구/231_2d2f5d31.docx",
+      "copiedTo": "source-docs/추가 탐구/231_2d2f5d31.docx",
+      "sha256": "9fd83554b29bc61f27fdbbec92589df474f763274bca9a419aa690dc2a88d5d2"
+    },
+    {
+      "original": "추가 탐구/23_2485f5479.docx",
+      "copiedTo": "source-docs/추가 탐구/23_2485f5479.docx",
+      "sha256": "aecfe26191a717e14661e75aadca00b9648d6f1dca23631cbbbeed24b002c51e"
+    },
+    {
+      "original": "추가 탐구/24_93444fc2d.docx",
+      "copiedTo": "source-docs/추가 탐구/24_93444fc2d.docx",
+      "sha256": "c2457ce06fcc0075e854f6de3251b686d849a082dcee486700fa9d498f3ed9db"
+    },
+    {
+      "original": "추가 탐구/25_01c3ab68a.docx",
+      "copiedTo": "source-docs/추가 탐구/25_01c3ab68a.docx",
+      "sha256": "0992d90ea2523cf2f9516a197a834a6232f4448acb348977032340689b0d2d9d"
+    },
+    {
+      "original": "추가 탐구/26_deb081d60.docx",
+      "copiedTo": "source-docs/추가 탐구/26_deb081d60.docx",
+      "sha256": "e3807944db20086ac9cebab30a6e2023921a4cafdf7784eaa3f17df89bd32cbf"
+    },
+    {
+      "original": "추가 탐구/27_bd14a9985.docx",
+      "copiedTo": "source-docs/추가 탐구/27_bd14a9985.docx",
+      "sha256": "8f4a38059321a5d987227162a2ad789ba4a828ac57a3f5041238b081ebaf310c"
+    },
+    {
+      "original": "추가 탐구/28_88caa317d.docx",
+      "copiedTo": "source-docs/추가 탐구/28_88caa317d.docx",
+      "sha256": "5948313aa027c957b31292458be7929ccf7831b436a7fdf07581eee51a2c4cf0"
+    },
+    {
+      "original": "추가 탐구/29_2116c20ac.docx",
+      "copiedTo": "source-docs/추가 탐구/29_2116c20ac.docx",
+      "sha256": "6a7f87beebff72a65febfaf49a1a1e7e76dd38ae2cd51731709117fe176f307e"
+    },
+    {
+      "original": "추가 탐구/30_f4fc2a02e.docx",
+      "copiedTo": "source-docs/추가 탐구/30_f4fc2a02e.docx",
+      "sha256": "ff7cec9aa2468d65a657cd18ad33884d0ef289c8e53271d76621dbb8fb1a31b6"
+    },
+    {
+      "original": "추가 탐구/31_a0c3bbbdc.docx",
+      "copiedTo": "source-docs/추가 탐구/31_a0c3bbbdc.docx",
+      "sha256": "58d0b32b36cfcc1596b9caa6f496a0d9c9c472b1c6a98f6875db4caf685368ce"
+    },
+    {
+      "original": "추가 탐구/32_e5f3334a3.docx",
+      "copiedTo": "source-docs/추가 탐구/32_e5f3334a3.docx",
+      "sha256": "026ea1159721ef3f3afeceabf02e28a74f3694dc1b4c1e6e54b03a42627d969f"
+    },
+    {
+      "original": "추가 탐구/33_55a19704e.docx",
+      "copiedTo": "source-docs/추가 탐구/33_55a19704e.docx",
+      "sha256": "3aa91ca7c319310c3a60acb66ac6f8e06a1c98f909fb723f5a12f6c4667a123a"
+    },
+    {
+      "original": "추가 탐구/34_014b4a31e.docx",
+      "copiedTo": "source-docs/추가 탐구/34_014b4a31e.docx",
+      "sha256": "763533a2de4759a960cc22cebf90a11c2d3b51dcac4b6f14ff0182fc78fa0156"
+    },
+    {
+      "original": "추가 탐구/35_817dc99ea.docx",
+      "copiedTo": "source-docs/추가 탐구/35_817dc99ea.docx",
+      "sha256": "e0008c72af65a1fec69fa7d1cfcd96e2f2b72f13f88059853c49d1ed64cfcc65"
+    },
+    {
+      "original": "추가 탐구/36_fe888263e.docx",
+      "copiedTo": "source-docs/추가 탐구/36_fe888263e.docx",
+      "sha256": "3645a64d1274ba2ce214101512be7c187487ea75317ad44cd36ba0c9d03424c5"
+    },
+    {
+      "original": "추가 탐구/37_81df5281d.docx",
+      "copiedTo": "source-docs/추가 탐구/37_81df5281d.docx",
+      "sha256": "31b10a79cf1934b7aa0567853707d1f87fbb799ef9e8ccea8339330bf1fb1689"
+    },
+    {
+      "original": "추가 탐구/38_c654f432f.docx",
+      "copiedTo": "source-docs/추가 탐구/38_c654f432f.docx",
+      "sha256": "0964dd183aba9cdff26147eda095150e37ecd49726840b34d662cd4fedc7572e"
+    },
+    {
+      "original": "추가 탐구/39_db2b3ab71.docx",
+      "copiedTo": "source-docs/추가 탐구/39_db2b3ab71.docx",
+      "sha256": "d15fcef66ecbc4c33053a0b6c22739176412d597ad62141bb7aa4aa47074937f"
+    },
+    {
+      "original": "추가 탐구/40_1aa65f940.docx",
+      "copiedTo": "source-docs/추가 탐구/40_1aa65f940.docx",
+      "sha256": "97239cb4f0630457f8b81986dc1dfd5303538ac195288432415ff1e31f82d345"
+    },
+    {
+      "original": "추가 탐구/41_05f93782b.docx",
+      "copiedTo": "source-docs/추가 탐구/41_05f93782b.docx",
+      "sha256": "0e33aa02e5d02574137d7af0504f419f50e544fc6f27f7f5fdcab8bdb3d1d3ab"
+    },
+    {
+      "original": "추가 탐구/42_0ce1dfc38.docx",
+      "copiedTo": "source-docs/추가 탐구/42_0ce1dfc38.docx",
+      "sha256": "905e356371e8f454c70c137591f1e714c5d6ca4caab66d21aa340c119f5c9c1f"
+    },
+    {
+      "original": "추가 탐구/43_2f1c04475.docx",
+      "copiedTo": "source-docs/추가 탐구/43_2f1c04475.docx",
+      "sha256": "8ed98efcc5ea9bdd84b6ab1d80a897ef6bb1a095f70d0b84983ccee37ecbe44d"
+    },
+    {
+      "original": "추가 탐구/44_7fae7f5e4.docx",
+      "copiedTo": "source-docs/추가 탐구/44_7fae7f5e4.docx",
+      "sha256": "d6c328b69373dc01e9137a426a06ae0ed163a7ff4e64a22e2086a9a7639fabf4"
+    },
+    {
+      "original": "추가 탐구/45_edd9dae9a.docx",
+      "copiedTo": "source-docs/추가 탐구/45_edd9dae9a.docx",
+      "sha256": "6c9319a209d00aa4018a9364521e4ec43ccdba3478c31d9bbb9ac92171e4104d"
+    },
+    {
+      "original": "추가 탐구/46_d609a96e2.docx",
+      "copiedTo": "source-docs/추가 탐구/46_d609a96e2.docx",
+      "sha256": "4738ce3c2ccd14b567da8e970c5c7d9fc464539986ca0596c8c5a309bea357b6"
+    },
+    {
+      "original": "추가 탐구/47_ee2d2a7b7.docx",
+      "copiedTo": "source-docs/추가 탐구/47_ee2d2a7b7.docx",
+      "sha256": "8b9f4add881b993da11c485cef1d786225f6f73c78ea6c4e29ae603729cc6992"
+    },
+    {
+      "original": "추가 탐구/48_2138c01c1.docx",
+      "copiedTo": "source-docs/추가 탐구/48_2138c01c1.docx",
+      "sha256": "aa3fdce816e719f311d35c93835906aad868cb28298b0fba24a0800fb460fe4a"
+    },
+    {
+      "original": "추가 탐구/49_d8e385dd4.docx",
+      "copiedTo": "source-docs/추가 탐구/49_d8e385dd4.docx",
+      "sha256": "5b957d403e8c72f2eff5cc896b26dfa45761e2e83cef5b090219c52a4d1e0337"
+    },
+    {
+      "original": "추가 탐구/50_f484bdbd1.docx",
+      "copiedTo": "source-docs/추가 탐구/50_f484bdbd1.docx",
+      "sha256": "68841d0bdae8f622a3da56e7c7611e01bcedeb12b48b42dac5970b6f6b286991"
+    }
+  ]
+}
