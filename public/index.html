@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2022 개정 교육과정 성취기준과 질문·탐구 예시를 연결해 살펴보는 탐색기">
+  <title>성취기준에서 탐구로 · 성취기준 탐색기</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/app.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="성취기준에서 탐구로 첫 화면"><span class="brand-mark" aria-hidden="true">↗</span><span>성취기준에서 <strong>탐구로</strong><small>2022 개정 교육과정</small></span></a>
+    <div class="header-actions"><button id="reportButton" class="quiet">자료 현황</button><button id="helpButton" class="outline">이용 안내 <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <section class="intro" aria-labelledby="pageTitle">
+    <div><div class="eyebrow">질문으로 시작하고, 탐구로 이어가세요</div><h1 id="pageTitle">하나의 성취기준, 여러 갈래의 탐구.</h1><p>성취기준을 선택하면 문서 곳곳의 질문과 탐구 계획을 한곳에서 볼 수 있습니다.</p></div>
+    <div class="metrics" id="metrics" aria-label="자료 요약"></div>
+  </section>
+  <nav class="domain-nav" id="domains" aria-label="교과 선택"></nav>
+  <main id="main" class="workspace">
+    <aside class="sidebar" aria-label="과목 선택">
+      <div class="side-title"><h2>과목 탐색</h2><span id="subjectCount"></span></div>
+      <label class="search small"><span aria-hidden="true">⌕</span><input id="subjectSearch" type="search" placeholder="과목 이름 찾기" aria-label="과목 이름 찾기"></label>
+      <div id="subjectList" class="subject-list"></div>
+      <div class="side-note"><span class="dot"></span> 예시가 있는 과목<small id="updatedAt"></small></div>
+    </aside>
+    <section class="browser-panel" aria-label="성취기준 탐색">
+      <div class="browser-toolbar">
+        <label class="search global"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="전체 성취기준·코드·과목 검색" aria-label="전체 성취기준 코드 과목 검색"><kbd>/</kbd></label>
+        <label class="only-examples"><input id="onlyExamples" type="checkbox"> 예시 있는 기준만</label>
+      </div>
+      <div class="subject-heading"><div><div class="eyebrow" id="subjectMeta"></div><h2 id="subjectTitle">자료를 불러오고 있습니다</h2></div><div class="view-tabs" role="group" aria-label="보기 선택"><button id="standardsTab" class="active" aria-pressed="true">성취기준</button><button id="textbooksTab" aria-pressed="false">교과서 목차</button></div></div>
+      <div id="standardsView" class="master-detail"><section class="standards-panel" aria-label="성취기준 목록"><div class="list-toolbar"><select id="areaFilter" aria-label="영역 선택"><option value="">전체 영역</option></select><span id="resultCount"></span></div><div id="standardList"></div></section><section class="detail-panel" id="detail" aria-label="탐구 예시 상세" aria-live="polite"></section></div>
+      <section id="textbooksView" class="textbooks-panel" hidden></section>
+    </section>
+  </main>
+  <footer>성취기준은 원본 탐색기 기준 · 탐구 예시는 제공된 문서 기준입니다. <button id="footerReport" class="text-button">연결 현황 확인</button></footer>
+  <dialog id="infoDialog"><div class="dialog-header"><h2 id="dialogTitle"></h2><button id="closeDialog" class="icon-button" aria-label="닫기">✕</button></div><div id="dialogBody"></div></dialog>
+  <dialog id="imageDialog"><div class="dialog-header"><h2 id="imageTitle">교과서 목차</h2><button id="closeImage" class="icon-button" aria-label="이미지 닫기">✕</button></div><img id="largeImage" alt=""></dialog>
+  <div id="toast" role="status"></div>
+  <noscript>이 탐색기를 이용하려면 브라우저에서 JavaScript를 켜 주세요.</noscript>
+</body>
+</html>
