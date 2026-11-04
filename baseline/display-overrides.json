@@ -1,0 +1,221 @@
+{
+  "10공수2-01-07": {
+    "originalText": "원점, 축, 축, 직선   에 대한 대칭이동을 탐구하고, 실생활과 연결하여 문제를 해결할 수 있다.",
+    "displayText": "원점, x축, y축, 직선 y=x에 대한 대칭이동을 탐구하고, 실생활과 연결하여 문제를 해결할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "x ",
+      "y ",
+      "y=x "
+    ],
+    "officialParagraph": "[10공수2-01-07] 원점, {수식}축, {수식}축, 직선 {수식}에 대한 대칭이동을 탐구하고, 실생활과 연결하여 문제를 해결할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "10공수2-03-03": {
+    "originalText": "역함수의 개념을 설명하고, 역함수를 구할 수 있다.   ",
+    "displayText": "역함수의 개념을 설명하고, 역함수를 구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [],
+    "officialParagraph": "[10공수2-03-03] 역함수의 개념을 설명하고, 역함수를 구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "10공수2-03-04": {
+    "originalText": "유리함수    의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수    있다.",
+    "displayText": "유리함수 y=(ax+b)/(cx+d)의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "y= {ax+b} over {cx+d}"
+    ],
+    "officialParagraph": "[10공수2-03-04] 유리함수 {수식}의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "10공수2-03-05": {
+    "originalText": "무리함수         의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.",
+    "displayText": "무리함수 y=√(ax+b)+c의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "y= sqrt {ax+b} +c"
+    ],
+    "officialParagraph": "[10공수2-03-05] 무리함수 {수식}의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "10기수2-01-07": {
+    "originalText": "원점, 축, 축, 직선   에 대한 대칭이동을 이해하고, 실생활과 연결할 수 있다.",
+    "displayText": "원점, x축, y축, 직선 y=x에 대한 대칭이동을 이해하고, 실생활과 연결할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "x",
+      "y",
+      "y=x"
+    ],
+    "officialParagraph": "[10기수2-01-07] 원점, {수식}축, {수식}축, 직선 {수식}에 대한 대칭이동을 이해하고, 실생활과 연결할 수 있다. \r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정",
+    "excerptReplacements": [
+      {
+        "original": "원점, 축, 축, 직선   에 대한 대칭이동을",
+        "display": "원점, x축, y축, 직선 y=x에 대한 대칭이동을",
+        "source": "추가 탐구/015_e2070d2e.docx",
+        "reason": "해당 성취기준을 일부만 인용한 초안의 수식 표기를 동일 공식 원문에 따라 표시 보정"
+      }
+    ]
+  },
+  "10기수2-03-03": {
+    "originalText": "역함수의 개념을 이해하고, 역함수를 구할 수 있다. ",
+    "displayText": "역함수의 개념을 이해하고, 역함수를 구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [],
+    "officialParagraph": "[10기수2-03-03] 역함수의 개념을 이해하고, 역함수를 구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "10기수2-03-04": {
+    "originalText": "유리함수    의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다. ",
+    "displayText": "유리함수 y=k/x의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "y=` {k} over {x}"
+    ],
+    "officialParagraph": "[10기수2-03-04] 유리함수 {수식}의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정",
+    "excerptReplacements": [
+      {
+        "original": "유리함수    의 그래프를 그릴 수 있고, 그 그",
+        "display": "유리함수 y=k/x의 그래프를 그릴 수 있고, 그 그",
+        "source": "추가 탐구/015_e2070d2e.docx",
+        "reason": "해당 성취기준을 일부만 인용한 초안의 수식 표기를 동일 공식 원문에 따라 표시 보정"
+      }
+    ]
+  },
+  "10기수2-03-05": {
+    "originalText": "무리함수      의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.",
+    "displayText": "무리함수 y=√(kx)의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "y= sqrt {kx}"
+    ],
+    "officialParagraph": "[10기수2-03-05] 무리함수 {수식}의 그래프를 그릴 수 있고, 그 그래프의 성질을 탐구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정",
+    "excerptReplacements": [
+      {
+        "original": "무리함수      의 그래프를 그릴 수 있고",
+        "display": "무리함수 y=√(kx)의 그래프를 그릴 수 있고",
+        "source": "추가 탐구/015_e2070d2e.docx",
+        "reason": "해당 성취기준을 일부만 인용한 초안의 수식 표기를 동일 공식 원문에 따라 표시 보정"
+      }
+    ]
+  },
+  "12대수03-02": {
+    "originalText": "등차수열의 뜻을 알고, 일반항, 첫째항부터 제항까지의 합을 구할 수 있다.",
+    "displayText": "등차수열의 뜻을 알고, 일반항, 첫째항부터 제n항까지의 합을 구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "n"
+    ],
+    "officialParagraph": "[12대수03-02] 등차수열의 뜻을 알고, 일반항, 첫째항부터 제{수식}항까지의 합을 구할 수 있다. \r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "12대수03-03": {
+    "originalText": "등비수열의 뜻을 알고, 일반항, 첫째항부터 제항까지의 합을 구할 수 있다.",
+    "displayText": "등비수열의 뜻을 알고, 일반항, 첫째항부터 제n항까지의 합을 구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "n"
+    ],
+    "officialParagraph": "[12대수03-03] 등비수열의 뜻을 알고, 일반항, 첫째항부터 제{수식}항까지의 합을 구할 수 있다. \r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "12대수03-05": {
+    "originalText": "여러 가지 수열의 첫째항부터 제항까지의 합을 구하는 방법을 설명할 수 있다.",
+    "displayText": "여러 가지 수열의 첫째항부터 제n항까지의 합을 구하는 방법을 설명할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "n"
+    ],
+    "officialParagraph": "[12대수03-05] 여러 가지 수열의 첫째항부터 제{수식}항까지의 합을 구하는 방법을 설명할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "12미적Ⅰ-02-03": {
+    "originalText": "함수    ( 은 양의 정수)의 도함수를 구할 수 있다.",
+    "displayText": "함수 y=xⁿ (n은 양의 정수)의 도함수를 구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "y=x^n ",
+      "n"
+    ],
+    "officialParagraph": "[12미적Ⅰ-02-03] 함수 {수식}({수식}은 양의 정수)의 도함수를 구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "12미적Ⅱ-03-01": {
+    "originalText": "   (  은 실수), 지수함수, 삼각함수의 부정적분과 정적분을 구할 수 있다.",
+    "displayText": "y=xⁿ (n은 실수), 지수함수, 삼각함수의 부정적분과 정적분을 구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "y=x ^{n} `",
+      "n`"
+    ],
+    "officialParagraph": "\u0002汤捯\u0000\u0000\u0000\u0000\u0002[12미적Ⅱ-03-01] {수식}({수식}은 실수), 지수함수, 삼각함수의 부정적분과 정적분을 구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "12경수03-02": {
+    "originalText": "역행렬의 뜻을 알고,  ×  행렬의 역행렬을 구할 수 있다.",
+    "displayText": "역행렬의 뜻을 알고, 2×2 행렬의 역행렬을 구할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책8] 수학과 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "aab8eed59ecf244223d04afad75f4cf5ac5085fadcfc3cf52c2f6d54ddfc7856",
+    "equationScripts": [
+      "2 TIMES 2"
+    ],
+    "officialParagraph": "[12경수03-02] 역행렬의 뜻을 알고, {수식} 행렬의 역행렬을 구할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "12고대01-01": {
+    "originalText": " 차원 벡터의 뜻을 알고,  차원 벡터의 연산을할 수 있다.",
+    "displayText": "n차원 벡터의 뜻을 알고, n차원 벡터의 연산을 할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책20] 과학 계열 선택 과목 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "4b0aaa86a2899b6bbc68b83a8ef66177fc0bbaa827fae35c35851bf27971ef3a",
+    "equationScripts": [
+      "n`",
+      "n`"
+    ],
+    "officialParagraph": "[12고대01-01]\u001f{수식}차원 벡터의 뜻을 알고, {수식}차원 벡터의 연산을 할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  },
+  "12고대01-06": {
+    "originalText": "두  차원 벡터의 내적을 이해하고, 이를 활용할 수 있다.",
+    "displayText": "두 n차원 벡터의 내적을 이해하고, 이를 활용할 수 있다.",
+    "sourceTitle": "교육부 고시 제2022-33호 [별책20] 과학 계열 선택 과목 교육과정",
+    "sourceUrl": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=141&boardSeq=93458&lev=0&statusYN=W",
+    "sourceFileSha256": "4b0aaa86a2899b6bbc68b83a8ef66177fc0bbaa827fae35c35851bf27971ef3a",
+    "equationScripts": [
+      "n`"
+    ],
+    "officialParagraph": "[12고대01-06]\u001f두 {수식}차원 벡터의 내적을 이해하고, 이를 활용할 수 있다.\r",
+    "reason": "원본 탐색기의 수식 글꼴 문자·분수식 추출 오류를 공식 HWP 본문 및 수식 스크립트와 대조하여 표시 보정"
+  }
+}
