@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2022 개정 교육과정 성취기준과 질문·탐구 예시를 연결해 살펴보는 탐색기">
-  <title>성취기준에서 탐구로 · 성취기준 탐색기</title>
+  <meta name="description" content="관심 주제·진로·과목에서 출발해 2022 개정 교육과정 성취기준과 연결된 탐구 예시를 찾고, 내 탐구 계획서를 만드는 사이트">
+  <title>성취기준에서 탐구로 · 나에게 맞는 탐구 찾기</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/app.css">
   <script src="assets/app.js" defer></script>
@@ -12,32 +12,43 @@
 <body>
   <a class="skip" href="#main">본문으로 이동</a>
   <header class="site-header">
-    <a class="brand" href="./" aria-label="성취기준에서 탐구로 첫 화면"><span class="brand-mark" aria-hidden="true">↗</span><span>성취기준에서 <strong>탐구로</strong><small>2022 개정 교육과정</small></span></a>
-    <div class="header-actions"><button id="reportButton" class="quiet">자료 현황</button><button id="helpButton" class="outline">이용 안내 <span aria-hidden="true">↗</span></button></div>
+    <a class="brand" href="./" aria-label="성취기준에서 탐구로 첫 화면"><span class="brand-mark" aria-hidden="true">↗</span><span>성취기준에서 <strong>탐구로</strong><small>창원경일고 · 2022 개정 교육과정</small></span></a>
+    <div class="header-actions"><button id="parentButton" class="quiet">학부모님께</button><button id="shelfButton" class="quiet">내 보관함 <span id="shelfCount" class="shelf-count"></span></button><button id="reportButton" class="quiet hide-sm">자료 현황</button><button id="helpButton" class="outline">이용 안내 <span aria-hidden="true">↗</span></button></div>
   </header>
   <section class="hero" aria-labelledby="pageTitle">
     <div class="hero-inner">
       <div class="hero-copy">
-        <div class="hero-eyebrow"><span class="pill">2022 개정 교육과정</span>고등학교 전 과목 성취기준 · 질문 · 탐구 계획</div>
-        <h1 id="pageTitle">성취기준 하나에서<br><em>질문</em>과 <em>탐구</em>가 시작됩니다</h1>
-        <p class="hero-lead">과목을 고르거나 궁금한 주제를 검색해 보세요. 성취기준마다 연결된 질문과 탐구 계획을 기본·심화 단계까지 한곳에서 볼 수 있습니다.</p>
+        <div class="hero-eyebrow"><span class="pill">질문하는 학교</span>고등학교 전 과목 성취기준 · 질문 · 탐구 계획</div>
+        <h1 id="pageTitle">무슨 <em>탐구</em>를 할지<br>고민인가요?</h1>
+        <p class="hero-lead">관심 있는 것에서 시작해 보세요. 수업에서 배우는 성취기준과 연결된 탐구 예시를 찾고, <strong>내 것으로 바꿔 탐구 계획서 한 장</strong>까지 만들 수 있습니다. 로그인 없이, 기록은 내 기기에만 저장됩니다.</p>
         <form class="hero-search" id="heroSearchForm" role="search">
           <span class="hero-search-icon" aria-hidden="true">⌕</span>
-          <input id="heroSearch" type="search" placeholder="주제·코드·과목 검색 (예: 인공지능, 10공수1-01-01)" aria-label="주제, 성취기준 코드, 과목 검색" autocomplete="off">
+          <input id="heroSearch" type="search" placeholder="궁금한 단어로 찾기 (예: 미세먼지, 인공지능, 수면)" aria-label="궁금한 단어로 탐구 주제 찾기" autocomplete="off">
           <button class="hero-search-button" type="submit">탐구 찾기</button>
         </form>
         <div class="topic-row"><span>이런 주제로 찾아보세요</span><div class="topic-chips" id="topicChips"><button type="button" data-topic="인공지능">인공지능</button><button type="button" data-topic="기후">기후 변화</button><button type="button" data-topic="반도체">반도체</button><button type="button" data-topic="데이터">데이터 분석</button><button type="button" data-topic="건강">건강·의료</button><button type="button" data-topic="지역">우리 지역</button></div></div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hv-standard"><span class="hv-label">성취기준</span><b>[12미적Ⅰ-02-10]</b> 미분을 속도와 가속도에 대한 문제에 활용하고, 그 유용성을 인식할 수 있다.</div>
-        <div class="hv-step s1"><span class="hv-num">① 왜?</span>자전거 속도계는 ‘순간’ 속도를 어떻게 알아낼까?</div>
-        <div class="hv-step s2"><span class="hv-num">② 어떻게?</span>1초 간격 위치 기록으로 속도 변화를 직접 계산해 보기</div>
-        <div class="hv-step s3"><span class="hv-num">③ 무엇이 달라질까?</span>측정 간격을 줄이면 계산한 속도는 어떻게 달라질까?</div>
-        <div class="hv-caption">화면 구성 예시 · 실제 예시는 성취기준을 선택하면 표시됩니다</div>
+      <div class="doors" role="group" aria-label="지금 필요한 것 고르기">
+        <p class="doors-title">나는 지금 무엇이 필요할까?</p>
+        <button class="door" data-door="subject"><span class="door-icon" aria-hidden="true">✎</span><b>수행평가·탐구 주제가 필요해요</b><small>학년과 과목을 고르면 그 과목 탐구로 바로</small></button>
+        <button class="door" data-door="career"><span class="door-icon" aria-hidden="true">◎</span><b>희망 진로와 연결하고 싶어요</b><small>관심 계열을 고르면 연결 진로가 맞는 탐구를</small></button>
+        <button class="door" data-door="quiz"><span class="door-icon" aria-hidden="true">✦</span><b>나에게 맞는 탐구를 추천받고 싶어요</b><small>4가지 질문에 답하면 탐구 6개를 골라 드려요</small></button>
+        <button class="door" data-door="plan"><span class="door-icon" aria-hidden="true">▤</span><b>탐구 계획서를 만들고 싶어요</b><small>예시를 내 것으로 바꿔 A4 한 장으로</small></button>
       </div>
     </div>
     <div class="metrics" id="metrics" aria-label="자료 요약"></div>
   </section>
+  <div class="notice" role="note"><b>참고 자료입니다.</b> 탐구 예시는 학습과 주제 탐구를 돕기 위한 참고 자료입니다. 예시를 그대로 쓰지 말고 내 질문으로 바꾸고, 실제 활동은 교과 담당 선생님과 내용과 수준을 확인하세요.</div>
+  <section class="finder" id="finder" aria-labelledby="finderTitle" hidden>
+    <div class="finder-inner">
+      <div class="finder-head"><div><div class="eyebrow" id="finderEyebrow"></div><h2 id="finderTitle"></h2></div><div class="finder-tabs" role="group" aria-label="찾는 방법"><button data-mode="subject">과목으로</button><button data-mode="career">진로로</button><button data-mode="quiz">추천받기</button><button data-mode="search">단어로</button></div></div>
+      <div id="finderControls"></div>
+      <div class="finder-options"><label><input type="checkbox" id="includeDrafts"> 검수 전 초안·자료 확인 필요 예시도 보기</label><span id="finderCount" role="status"></span></div>
+      <div id="finderResults" class="topic-grid" aria-live="polite"></div>
+      <div class="finder-foot"><button class="text-button" id="finderMore" hidden>더 보기</button><button class="outline" id="finderToExplorer">교과별 전체 자료에서 보기 ↓</button><button class="text-button" id="finderClose">닫기</button></div>
+    </div>
+  </section>
+  <div class="explorer-title" id="explorerTitle"><h2>교과별 전체 자료</h2><p>교과 → 과목 → 성취기준 순서로 모든 탐구 예시를 볼 수 있습니다. 선생님이 수업과 수행평가를 설계할 때도 이 화면을 쓰세요.</p></div>
   <nav class="domain-nav" id="domains" aria-label="교과 선택"></nav>
   <main id="main" class="workspace">
     <aside class="sidebar" aria-label="과목 선택">
@@ -49,7 +60,7 @@
     <section class="browser-panel" aria-label="성취기준 탐색">
       <div class="browser-toolbar">
         <label class="search global"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="성취기준·코드·과목·탐구 내용 검색" aria-label="성취기준, 코드, 과목, 탐구 예시 내용 검색"><kbd>/</kbd></label>
-        <select id="exampleFilter" class="example-filter" aria-label="성취기준 목록 조건"><option value="">모든 성취기준</option><option value="any">예시 있는 기준만</option><option value="reviewed">검수 완료 예시 있는 기준만</option></select>
+        <select id="exampleFilter" class="example-filter" aria-label="성취기준 목록 조건"><option value="">모든 성취기준</option><option value="any">예시 있는 기준만</option><option value="usable">초안이 아닌 예시 있는 기준만</option><option value="verified">교과 검토 완료 예시 있는 기준만</option></select>
         <span id="searchStatus" class="search-status" role="status"></span>
       </div>
       <div class="subject-heading"><div><div class="eyebrow" id="subjectMeta"></div><h2 id="subjectTitle">자료를 불러오고 있습니다</h2></div><div class="view-tabs" role="group" aria-label="보기 선택"><button id="standardsTab" class="active" aria-pressed="true">성취기준</button><button id="textbooksTab" aria-pressed="false">교과서 목차</button></div></div>
@@ -57,9 +68,11 @@
       <section id="textbooksView" class="textbooks-panel" hidden></section>
     </section>
   </main>
-  <footer>성취기준은 원본 탐색기 기준 · 탐구 예시는 제공된 문서 기준입니다. <button id="footerReport" class="text-button">연결 현황 확인</button></footer>
+  <footer>성취기준은 원본 탐색기 기준 · 탐구 예시는 제공된 문서 기준의 참고 자료입니다. ‘교과 검토 완료’는 교과교사가 확인한 자료에만 표시합니다. <button id="footerReport" class="text-button">연결 현황 확인</button></footer>
   <dialog id="infoDialog"><div class="dialog-header"><h2 id="dialogTitle"></h2><button id="closeDialog" class="icon-button" aria-label="닫기">✕</button></div><div id="dialogBody"></div></dialog>
   <dialog id="imageDialog"><div class="dialog-header"><h2 id="imageTitle">교과서 목차</h2><button id="closeImage" class="icon-button" aria-label="이미지 닫기">✕</button></div><img id="largeImage" alt=""></dialog>
+  <dialog id="planDialog" class="plan-dialog" aria-labelledby="planTitle"><div class="dialog-header"><h2 id="planTitle">내 탐구 계획서</h2><button id="closePlan" class="icon-button" aria-label="계획서 닫기">✕</button></div><div id="planBody"></div></dialog>
+  <div id="printArea" aria-hidden="true"></div>
   <div id="toast" role="status"></div>
   <noscript>이 탐색기를 이용하려면 브라우저에서 JavaScript를 켜 주세요.</noscript>
 </body>

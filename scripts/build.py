@@ -104,9 +104,66 @@ def block(el, markers=None):
 def block_text(b):
     return b['text'] if b['type'] == 'paragraph' else '\n'.join(c['text'] for r in b['rows'] for c in r)
 
-def is_reviewed(example):
-    """An example is shown as reviewed when its source is not a draft and its standard text matches."""
-    return not example.get('draft') and not example.get('textReview')
+# Example status. Only a teacher's explicit record (baseline/teacher-reviewed.json) makes an example
+# 'verified'. The absence of a draft label is NOT a review: such examples are 'general'.
+STATUSES = ('verified', 'general', 'draft', 'review')
+
+def status_of(example):
+    if example.get('verified'):
+        return 'verified'
+    if example.get('textReview'):
+        return 'review'
+    if example.get('draft'):
+        return 'draft'
+    return 'general'
+
+def is_usable(example):
+    """Shown to students by default: teacher-verified or general examples (not drafts, no text mismatch)."""
+    return status_of(example) in ('verified', 'general')
+
+def load_optional(path, default):
+    return json.loads(path.read_text(encoding='utf-8')) if path.exists() else default
+
+def file_hash(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def excluded_sources(source, project_root=None):
+    """Documents excluded by content hash (file names may be broken), listed in baseline/excluded-sources.json."""
+    rules = load_optional((project_root or ROOT) / 'baseline/excluded-sources.json', {'files': []})['files']
+    hashes = {r['sha256']: r for r in rules}
+    found = {}
+    for p in source.rglob('*'):
+        if p.is_file() and p.suffix.lower() == '.docx' and not p.name.startswith('~$'):
+            rule = hashes.get(file_hash(p)) if hashes else None
+            if rule:
+                found[p.relative_to(source).as_posix()] = rule
+    return found
+
+def source_paths(source, project_root=None):
+    excluded = excluded_sources(source, project_root)
+    paths = sorted(p for p in source.rglob('*') if p.is_file() and p.suffix.lower() == '.docx'
+                   and not p.name.startswith('~$') and p.relative_to(source).as_posix() not in excluded)
+    return paths, excluded
+
+def careers_of(text):
+    """The '연결 진로' line that most documents carry, used for the career finder."""
+    m = re.search(r'연결 진로\s*[:：]?\s*([^\n]{1,120})', text)
+    if not m:
+        return ''
+    value = re.split(r'\s{2,}|세특|검수 필요|교사', m.group(1))[0]
+    return value.strip(' ·,')[:80]
+
+def example_title(blocks):
+    """Mirror of the web's card title: the first question of the activity."""
+    for b in blocks:
+        if b['type'] == 'table':
+            rows = b['rows']
+            header = ' '.join(c['text'] for c in rows[0]) if rows else ''
+            if '기본' in header and len(rows) > 1 and len(rows[1]) > 1:
+                return re.sub(r'^질문[:：]?\s*', '', rows[1][1]['text'].split('\n')[0])[:90]
+        elif re.match(r'^(\[왜|1\.\s*\[왜)', b['text']):
+            return re.sub(r'^\[왜\?\]\s*', '', b['text'])[:90]
+    return ''
 
 def search_text(text):
     return re.sub(r'\s+', ' ', text).strip()
@@ -211,7 +268,11 @@ def build(args):
     imports = []
     total_sections = total_examples = duplicates = 0
     fingerprints = {}
-    paths = sorted(p for p in source.rglob('*') if p.is_file() and p.suffix.lower() == '.docx' and not p.name.startswith('~$'))
+    paths, excluded = source_paths(source)
+    report['excludedFiles'] = [{'file': name, 'reason': rule.get('reason', ''), 'sha256': rule['sha256']} for name, rule in sorted(excluded.items())]
+    reviewed_cfg = load_optional(ROOT / 'baseline/teacher-reviewed.json', {'files': [], 'examples': []})
+    verified_files = {r['file'] for r in reviewed_cfg.get('files', [])}
+    verified_ids = {r['id'] for r in reviewed_cfg.get('examples', [])}
     if not paths:
         raise SystemExit('자료 폴더에 DOCX가 없습니다. 기존 결과를 유지합니다.')
     for path in paths:
@@ -234,6 +295,8 @@ def build(args):
                        'format': 'flow' if '기본' in content and '심화' in content else 'plan',
                        'sources': [{'id': file_id, 'file': source_name, 'section': index, 'draft': draft}], 'draft': draft}
             example['searchText'] = content
+            if source_name in verified_files or example['id'] in verified_ids:
+                example['verified'] = True
             for code in section['codes']:
                 targets = code_map.get(code, [])
                 if not targets:
@@ -258,6 +321,8 @@ def build(args):
                         if example['sources'][0] not in existing['sources']:
                             existing['sources'].extend(example['sources'])
                         existing['draft'] = existing.get('draft', False) or draft
+                        if example.get('verified'):
+                            existing['verified'] = True
                         duplicates += 1
                     else:
                         entry = dict(example, sources=list(example['sources']))
@@ -274,7 +339,8 @@ def build(args):
     out = Path(staging.name) / 'dist'
     out.mkdir()
     shutil.copytree(ROOT / 'public', out, dirs_exist_ok=True)
-    covered = reviewed_total = draft_total = review_total = 0
+    covered = 0
+    status_totals = dict.fromkeys(STATUSES, 0)
     search_index = {}
     for s in subjects:
         count = 0
@@ -282,25 +348,29 @@ def build(args):
             examples.sort(key=lambda e: (bool(e.get('textReview')), bool(e.get('draft')), e['format'] != 'flow', e['sources'][0]['file']))
         for st in s['standards']:
             st['exampleCount'] = len(per_subject[s['id']][st['code']])
-            st['reviewedCount'] = sum(1 for e in per_subject[s['id']][st['code']] if is_reviewed(e))
+            st['usableCount'] = sum(1 for e in per_subject[s['id']][st['code']] if is_usable(e))
+            st['verifiedCount'] = sum(1 for e in per_subject[s['id']][st['code']] if status_of(e) == 'verified')
             st['sourceCount'] = sum(len(e['sources']) for e in per_subject[s['id']][st['code']])
             count += bool(st['exampleCount'])
         s['covered'] = count
         covered += count
         for examples in per_subject[s['id']].values():
             for e in examples:
-                reviewed_total += is_reviewed(e)
-                draft_total += bool(e.get('draft'))
-                review_total += bool(e.get('textReview'))
+                e['status'] = status_of(e)
+                status_totals[e['status']] += 1
         # searchText is kept in the separate search index so detail files stay small.
         write_json(out / 'data/inquiries' / (s['id'] + '.json'),
                    {code: [{k: v for k, v in e.items() if k != 'searchText'} for e in examples] for code, examples in per_subject[s['id']].items()})
-        search_index[s['id']] = {code: [[e['id'], search_text(e['searchText'])] for e in examples] for code, examples in per_subject[s['id']].items() if examples}
+        # [id, text, title, linked careers, status] — enough to show topic cards without loading detail files.
+        search_index[s['id']] = {code: [[e['id'], search_text(e['searchText']), example_title(e['blocks']), careers_of(e['searchText']), e['status']] for e in examples] for code, examples in per_subject[s['id']].items() if examples}
     report['summary'] = {'documents': len(paths), 'subjects': len(subjects), 'standards': sum(len(s['standards']) for s in subjects),
                          'coveredStandards': covered, 'sections': total_sections, 'examples': total_examples,
                          'exactDuplicatesMerged': duplicates, 'unmatched': len(report['unmatched']),
                          'textDifferences': len(report['textDifferences']), 'ambiguous': len(report['ambiguous'])}
-    report['summary'].update({'reviewedExamples': reviewed_total, 'draftExamples': draft_total, 'reviewExamples': review_total})
+    report['summary'].update({'verifiedExamples': status_totals['verified'], 'generalExamples': status_totals['general'],
+                              'draftExamples': status_totals['draft'], 'reviewExamples': status_totals['review'],
+                              'usableExamples': status_totals['verified'] + status_totals['general'],
+                              'excludedDocuments': len(report['excludedFiles'])})
     report['summary']['displayCorrectionCount'] = len(corrections)
     report['displayCorrections'] = corrections
     report['generatedAt'] = datetime.now(timezone(timedelta(hours=9))).isoformat(timespec='seconds')
@@ -309,6 +379,7 @@ def build(args):
     write_json(out / 'data/sources.json', imports)
     write_json(out / 'data/search.json', search_index)
     write_json(out / 'data/report.json', report)
+    write_json(out / 'data/school.json', load_optional(ROOT / 'baseline/school-subjects.json', {}))
     try:
         from validate import validate
         validate(output_dir=out, source_dir=source, project_root=ROOT, quiet=True)

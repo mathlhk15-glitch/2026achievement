@@ -68,6 +68,21 @@ def run():
             with zipfile.ZipFile(backslash, 'w') as z:
                 z.writestr('word\\document.xml', f'<w:document xmlns:w="{importer.NS["w"]}"><w:body><w:p><w:r><w:t>[10공수1-01-01] 기준 원문</w:t></w:r></w:p><w:p><w:r><w:t>역슬래시 경로 예시</w:t></w:r></w:p></w:body></w:document>')
             assert len(importer.read_document(backslash)[1]) == 1, 'Windows 도구가 만든 역슬래시 경로 문서도 모든 운영체제에서 읽어야 합니다.'
+            bad = nested / 'wrong-links.docx'
+            document(bad, extra='<w:p><w:r><w:t>[12미등록01-02] 잘못 연결된 묶음</w:t></w:r></w:p>')
+            importer.write_json(root / 'baseline/excluded-sources.json', {'files': [{'sha256': importer.file_hash(bad), 'reason': 'test'}]})
+            importer.write_json(root / 'baseline/teacher-reviewed.json', {'files': [{'file': 'a.docx'}], 'examples': []})
+            with contextlib.redirect_stdout(io.StringIO()):
+                importer.build(args)
+            report = json.loads((root / 'dist/data/report.json').read_text(encoding='utf-8'))
+            assert [e['file'] for e in report['excludedFiles']] == ['추가 탐구/wrong-links.docx'], '내용 해시로 지정한 문서는 제외해야 합니다.'
+            assert all(f['file'] != '추가 탐구/wrong-links.docx' for f in report['files']) and not any(u['code'] == '12미등록01-02' for u in report['unmatched']), '제외 문서는 결과에 들어가면 안 됩니다.'
+            inquiry = json.loads((root / 'dist/data/inquiries/test.json').read_text(encoding='utf-8'))
+            statuses = {e['status'] for e in inquiry['10공수1-01-01']}
+            assert 'verified' in statuses and 'draft' in statuses, '교사가 기록한 자료만 교과 검토 완료가 되고 초안 표시는 유지되어야 합니다.'
+            assert report['summary']['verifiedExamples'] >= 1 and 'reviewedExamples' not in report['summary']
+            bad.unlink()
+            (root / 'baseline/excluded-sources.json').unlink(); (root / 'baseline/teacher-reviewed.json').unlink()
             document(nested / 'UPPERCASE.DOCX', numbering=True)
             with contextlib.redirect_stdout(io.StringIO()):
                 importer.build(args)
@@ -107,7 +122,7 @@ def run():
             assert (root / 'dist/data/catalog.json').read_bytes() == before, '실패 시 기존 결과가 유지되어야 합니다.'
         finally:
             importer.ROOT = real_root
-    print('PASS: 추가·중복·하위 폴더·대문자 확장자·역슬래시 경로·참고 코드·자동 번호·초안·웹 본문 변조 검출·검증 실패 시 기존 결과 유지')
+    print('PASS: 추가·중복·하위 폴더·대문자 확장자·역슬래시 경로·해시 제외·교과 검토 기록·참고 코드·자동 번호·초안·웹 본문 변조 검출·검증 실패 시 기존 결과 유지')
 
 if __name__ == '__main__':
     import sys
