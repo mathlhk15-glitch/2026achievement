@@ -5,17 +5,12 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: github-pages
   cancel-in-progress: true
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -25,18 +20,45 @@ jobs:
         with:
           node-version: '24'
       - name: Convert source documents
-        run: python scripts/build.py
+        shell: pwsh
+        run: |
+          python scripts/build.py
+          $buildExitCode = $LASTEXITCODE
+          if ($buildExitCode -ne 0) {
+            if (Test-Path -LiteralPath 'reports/failed-import.json') {
+              $failureReport = Get-Content -LiteralPath 'reports/failed-import.json' -Raw -Encoding utf8 | ConvertFrom-Json
+              $failureReport.errors | ConvertTo-Json -Depth 10 | Write-Output
+            }
+            exit $buildExitCode
+          }
       - name: Verify content and links
+        shell: pwsh
         run: |
           python scripts/validate.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python scripts/test_importer.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python scripts/test_server.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           node --check public/assets/app.js
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           node scripts/test_frontend.cjs
-      - uses: actions/configure-pages@v5
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
