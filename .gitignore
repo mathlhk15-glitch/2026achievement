@@ -1,0 +1,8 @@
+dist/
+__pycache__/
+*.pyc
+.preview.pid
+.preview.*.log
+.build-*/
+reports/failed-import.json
+~$*
