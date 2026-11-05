@@ -64,6 +64,10 @@ def run():
             reference = '<w:tbl><w:tr><w:tc><w:p><w:r><w:t>다른 성취기준 참고 [10공수1-01-02]</w:t></w:r></w:p></w:tc></w:tr></w:tbl>'
             document(nested / 'reference.docx', extra=reference)
             assert len(importer.read_document(nested / 'reference.docx')[1]) == 1, '표 안의 참고 코드를 새 예시로 분리하면 안 됩니다.'
+            backslash = nested / 'windows-tool.docx'
+            with zipfile.ZipFile(backslash, 'w') as z:
+                z.writestr('word\\document.xml', f'<w:document xmlns:w="{importer.NS["w"]}"><w:body><w:p><w:r><w:t>[10공수1-01-01] 기준 원문</w:t></w:r></w:p><w:p><w:r><w:t>역슬래시 경로 예시</w:t></w:r></w:p></w:body></w:document>')
+            assert len(importer.read_document(backslash)[1]) == 1, 'Windows 도구가 만든 역슬래시 경로 문서도 모든 운영체제에서 읽어야 합니다.'
             document(nested / 'UPPERCASE.DOCX', numbering=True)
             with contextlib.redirect_stdout(io.StringIO()):
                 importer.build(args)
@@ -103,7 +107,7 @@ def run():
             assert (root / 'dist/data/catalog.json').read_bytes() == before, '실패 시 기존 결과가 유지되어야 합니다.'
         finally:
             importer.ROOT = real_root
-    print('PASS: 추가·중복·하위 폴더·대문자 확장자·참고 코드·자동 번호·초안·웹 본문 변조 검출·검증 실패 시 기존 결과 유지')
+    print('PASS: 추가·중복·하위 폴더·대문자 확장자·역슬래시 경로·참고 코드·자동 번호·초안·웹 본문 변조 검출·검증 실패 시 기존 결과 유지')
 
 if __name__ == '__main__':
     import sys

@@ -4,7 +4,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 import collections, hashlib, json, zipfile
 import xml.etree.ElementTree as ET
-from build import ROOT, NS, read_document, block_text, norm_text
+from build import ROOT, NS, read_document, block_text, norm_text, read_part, is_reviewed, search_text
 
 def load(path):
     return json.loads(path.read_text(encoding='utf-8'))
@@ -39,7 +39,7 @@ def validate(output_dir=None, source_dir=None, project_root=None, quiet=False):
         name = file['file']
         path = source_dir / name
         with zipfile.ZipFile(path) as z:
-            xml = ET.fromstring(z.read('word/document.xml'))
+            xml = ET.fromstring(read_part(z, 'word/document.xml'))
         original = ''.join(t.text or '' for t in xml.find('w:body', NS).iter() if t.tag.split('}')[-1] == 't')
         intro, sections = read_document(path)
         extracted = ''.join(block_text(b) for b in intro)
@@ -65,13 +65,15 @@ def validate(output_dir=None, source_dir=None, project_root=None, quiet=False):
             section = expected[key]
             assert code in section['codes'], '다른 성취기준으로 잘못 연결: ' + str(key)
             assert canonical(example['blocks']) == canonical(section['blocks']), '웹 예시 본문 변경 또는 누락: ' + str(key)
-            assert example['searchText'] == '\n'.join(block_text(b) for b in section['blocks']), '예시 텍스트 불일치: ' + str(key)
+            assert example.get('searchText', '\n'.join(block_text(b) for b in example['blocks'])) == '\n'.join(block_text(b) for b in section['blocks']), '예시 텍스트 불일치: ' + str(key)
             assert source['id'] == info_by_name[source['file']]['id'], '출처 안내 연결 오류: ' + str(key)
             assert bool(source.get('draft')) == bool(info_by_name[source['file']].get('draft')), '출처 초안 표시 오류'
             exported_sources[key] += 1
         assert bool(example.get('draft')) == any(s.get('draft') for s in example['sources']), '예시 초안 표시 오류'
         assert not orphan or code not in codes, '연결 가능한 예시가 미연결 목록에 있습니다.'
 
+    search_index = load(dist / 'data/search.json')
+    reviewed_total = draft_total = review_total = 0
     for subject in subjects:
         base = baseline_by_id[subject['id']]
         for field in ('name', 'domain', 'group', 'key', 'level'):
@@ -89,6 +91,10 @@ def validate(output_dir=None, source_dir=None, project_root=None, quiet=False):
                 assert st['text'] == correction['originalText'], '수식 보정 기준 원문 불일치'
             examples = data.get(st['code'], [])
             assert len(examples) == st['exampleCount'], '목록과 상세 예시 수 불일치'
+            assert st['reviewedCount'] == sum(1 for e in examples if is_reviewed(e)), '검수 완료 예시 수 불일치'
+            indexed = search_index.get(subject['id'], {}).get(st['code'], [])
+            assert [i for i, _ in indexed] == [e['id'] for e in examples], '내용 검색 색인과 예시 불일치'
+            assert all(t == search_text('\n'.join(block_text(b) for b in e['blocks'])) for (_, t), e in zip(indexed, examples)), '내용 검색 색인 텍스트 불일치'
             assert st['sourceCount'] == sum(len(e['sources']) for e in examples), '출처 수 불일치'
             assert len({e['id'] for e in examples}) == len(examples), '중복 예시 식별자'
             subject_covered += bool(examples)
@@ -97,7 +103,9 @@ def validate(output_dir=None, source_dir=None, project_root=None, quiet=False):
             for example in examples:
                 check_example(example, st['code'])
                 actual_duplicates += len(example['sources']) - 1
-                assert bool(example.get('textReview')) == (norm_text(st['text']) not in norm_text(example['searchText'])), '문장 비교 표시 오류'
+                reviewed_total += is_reviewed(example); draft_total += bool(example.get('draft')); review_total += bool(example.get('textReview'))
+                assert 'searchText' not in example, '상세 자료에 중복 검색 텍스트가 남아 있습니다.'
+                assert bool(example.get('textReview')) == (norm_text(st['text']) not in norm_text('\n'.join(block_text(b) for b in example['blocks']))), '문장 비교 표시 오류'
         assert subject['covered'] == subject_covered, '과목별 연결 수 불일치'
         actual_covered += subject_covered
     orphans = report.get('orphanExamples', [])
@@ -131,5 +139,6 @@ def validate(output_dir=None, source_dir=None, project_root=None, quiet=False):
     assert s['unmatched'] == len(orphans) and s['textDifferences'] == len(report['textDifferences'])
     assert s['exactDuplicatesMerged'] == actual_duplicates, '중복 병합 수 불일치'
     assert s.get('displayCorrectionCount', 0) == len(corrections), '수식 보정 개수 불일치'
+    assert (s['reviewedExamples'], s['draftExamples'], s['reviewExamples']) == (reviewed_total, draft_total, review_total), '검수 상태 집계 불일치'
     if not quiet:
         print(f'PASS: {len(all_paths)}개 원문 및 실제 웹 본문·출처·기준 자료 대조, {actual_standards}개 성취기준, {actual_examples}개 예시, {len(textbooks)}개 목차 항목')

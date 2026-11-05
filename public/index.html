@@ -15,8 +15,27 @@
     <a class="brand" href="./" aria-label="성취기준에서 탐구로 첫 화면"><span class="brand-mark" aria-hidden="true">↗</span><span>성취기준에서 <strong>탐구로</strong><small>2022 개정 교육과정</small></span></a>
     <div class="header-actions"><button id="reportButton" class="quiet">자료 현황</button><button id="helpButton" class="outline">이용 안내 <span aria-hidden="true">↗</span></button></div>
   </header>
-  <section class="intro" aria-labelledby="pageTitle">
-    <div><div class="eyebrow">질문으로 시작하고, 탐구로 이어가세요</div><h1 id="pageTitle">하나의 성취기준, 여러 갈래의 탐구.</h1><p>성취기준을 선택하면 문서 곳곳의 질문과 탐구 계획을 한곳에서 볼 수 있습니다.</p></div>
+  <section class="hero" aria-labelledby="pageTitle">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><span class="pill">2022 개정 교육과정</span>고등학교 전 과목 성취기준 · 질문 · 탐구 계획</div>
+        <h1 id="pageTitle">성취기준 하나에서<br><em>질문</em>과 <em>탐구</em>가 시작됩니다</h1>
+        <p class="hero-lead">과목을 고르거나 궁금한 주제를 검색해 보세요. 성취기준마다 연결된 질문과 탐구 계획을 기본·심화 단계까지 한곳에서 볼 수 있습니다.</p>
+        <form class="hero-search" id="heroSearchForm" role="search">
+          <span class="hero-search-icon" aria-hidden="true">⌕</span>
+          <input id="heroSearch" type="search" placeholder="주제·코드·과목 검색 (예: 인공지능, 10공수1-01-01)" aria-label="주제, 성취기준 코드, 과목 검색" autocomplete="off">
+          <button class="hero-search-button" type="submit">탐구 찾기</button>
+        </form>
+        <div class="topic-row"><span>이런 주제로 찾아보세요</span><div class="topic-chips" id="topicChips"><button type="button" data-topic="인공지능">인공지능</button><button type="button" data-topic="기후">기후 변화</button><button type="button" data-topic="반도체">반도체</button><button type="button" data-topic="데이터">데이터 분석</button><button type="button" data-topic="건강">건강·의료</button><button type="button" data-topic="지역">우리 지역</button></div></div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-standard"><span class="hv-label">성취기준</span><b>[12미적Ⅰ-02-10]</b> 미분을 속도와 가속도에 대한 문제에 활용하고, 그 유용성을 인식할 수 있다.</div>
+        <div class="hv-step s1"><span class="hv-num">① 왜?</span>자전거 속도계는 ‘순간’ 속도를 어떻게 알아낼까?</div>
+        <div class="hv-step s2"><span class="hv-num">② 어떻게?</span>1초 간격 위치 기록으로 속도 변화를 직접 계산해 보기</div>
+        <div class="hv-step s3"><span class="hv-num">③ 무엇이 달라질까?</span>측정 간격을 줄이면 계산한 속도는 어떻게 달라질까?</div>
+        <div class="hv-caption">화면 구성 예시 · 실제 예시는 성취기준을 선택하면 표시됩니다</div>
+      </div>
+    </div>
     <div class="metrics" id="metrics" aria-label="자료 요약"></div>
   </section>
   <nav class="domain-nav" id="domains" aria-label="교과 선택"></nav>
@@ -29,8 +48,9 @@
     </aside>
     <section class="browser-panel" aria-label="성취기준 탐색">
       <div class="browser-toolbar">
-        <label class="search global"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="전체 성취기준·코드·과목 검색" aria-label="전체 성취기준 코드 과목 검색"><kbd>/</kbd></label>
-        <label class="only-examples"><input id="onlyExamples" type="checkbox"> 예시 있는 기준만</label>
+        <label class="search global"><span aria-hidden="true">⌕</span><input id="globalSearch" type="search" placeholder="성취기준·코드·과목·탐구 내용 검색" aria-label="성취기준, 코드, 과목, 탐구 예시 내용 검색"><kbd>/</kbd></label>
+        <select id="exampleFilter" class="example-filter" aria-label="성취기준 목록 조건"><option value="">모든 성취기준</option><option value="any">예시 있는 기준만</option><option value="reviewed">검수 완료 예시 있는 기준만</option></select>
+        <span id="searchStatus" class="search-status" role="status"></span>
       </div>
       <div class="subject-heading"><div><div class="eyebrow" id="subjectMeta"></div><h2 id="subjectTitle">자료를 불러오고 있습니다</h2></div><div class="view-tabs" role="group" aria-label="보기 선택"><button id="standardsTab" class="active" aria-pressed="true">성취기준</button><button id="textbooksTab" aria-pressed="false">교과서 목차</button></div></div>
       <div id="standardsView" class="master-detail"><section class="standards-panel" aria-label="성취기준 목록"><div class="list-toolbar"><select id="areaFilter" aria-label="영역 선택"><option value="">전체 영역</option></select><span id="resultCount"></span></div><div id="standardList"></div></section><section class="detail-panel" id="detail" aria-label="탐구 예시 상세" aria-live="polite"></section></div>

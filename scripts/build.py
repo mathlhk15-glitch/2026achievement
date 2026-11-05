@@ -104,6 +104,13 @@ def block(el, markers=None):
 def block_text(b):
     return b['text'] if b['type'] == 'paragraph' else '\n'.join(c['text'] for r in b['rows'] for c in r)
 
+def is_reviewed(example):
+    """An example is shown as reviewed when its source is not a draft and its standard text matches."""
+    return not example.get('draft') and not example.get('textReview')
+
+def search_text(text):
+    return re.sub(r'\s+', ' ', text).strip()
+
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + '.tmp')
@@ -135,11 +142,21 @@ def bootstrap(html_path):
     write_json(ROOT / 'baseline/subjects.json', subjects)
     write_json(ROOT / 'baseline/textbooks.json', textbooks)
 
+def part_names(z):
+    """Map normalized part names to stored names. Some Windows tools store 'word\\document.xml'."""
+    return {n.replace('\\', '/').lstrip('/'): n for n in z.namelist()}
+
+def read_part(z, name):
+    stored = part_names(z).get(name)
+    if stored is None:
+        raise KeyError(f"There is no item named '{name}' in the archive")
+    return z.read(stored)
+
 def read_document(path):
     before = path.stat()
     with zipfile.ZipFile(path) as z:
-        root = ET.fromstring(z.read('word/document.xml'))
-        numbering = ET.fromstring(z.read('word/numbering.xml')) if 'word/numbering.xml' in z.namelist() else None
+        root = ET.fromstring(read_part(z, 'word/document.xml'))
+        numbering = ET.fromstring(read_part(z, 'word/numbering.xml')) if 'word/numbering.xml' in part_names(z) else None
     after = path.stat()
     if before.st_size != after.st_size or before.st_mtime_ns != after.st_mtime_ns:
         raise ValueError('문서가 읽는 중 변경되었습니다. 저장을 마친 뒤 다시 갱신하세요.')
@@ -257,28 +274,40 @@ def build(args):
     out = Path(staging.name) / 'dist'
     out.mkdir()
     shutil.copytree(ROOT / 'public', out, dirs_exist_ok=True)
-    covered = 0
+    covered = reviewed_total = draft_total = review_total = 0
+    search_index = {}
     for s in subjects:
         count = 0
         for examples in per_subject[s['id']].values():
             examples.sort(key=lambda e: (bool(e.get('textReview')), bool(e.get('draft')), e['format'] != 'flow', e['sources'][0]['file']))
         for st in s['standards']:
             st['exampleCount'] = len(per_subject[s['id']][st['code']])
+            st['reviewedCount'] = sum(1 for e in per_subject[s['id']][st['code']] if is_reviewed(e))
             st['sourceCount'] = sum(len(e['sources']) for e in per_subject[s['id']][st['code']])
             count += bool(st['exampleCount'])
         s['covered'] = count
         covered += count
-        write_json(out / 'data/inquiries' / (s['id'] + '.json'), per_subject[s['id']])
+        for examples in per_subject[s['id']].values():
+            for e in examples:
+                reviewed_total += is_reviewed(e)
+                draft_total += bool(e.get('draft'))
+                review_total += bool(e.get('textReview'))
+        # searchText is kept in the separate search index so detail files stay small.
+        write_json(out / 'data/inquiries' / (s['id'] + '.json'),
+                   {code: [{k: v for k, v in e.items() if k != 'searchText'} for e in examples] for code, examples in per_subject[s['id']].items()})
+        search_index[s['id']] = {code: [[e['id'], search_text(e['searchText'])] for e in examples] for code, examples in per_subject[s['id']].items() if examples}
     report['summary'] = {'documents': len(paths), 'subjects': len(subjects), 'standards': sum(len(s['standards']) for s in subjects),
                          'coveredStandards': covered, 'sections': total_sections, 'examples': total_examples,
                          'exactDuplicatesMerged': duplicates, 'unmatched': len(report['unmatched']),
                          'textDifferences': len(report['textDifferences']), 'ambiguous': len(report['ambiguous'])}
+    report['summary'].update({'reviewedExamples': reviewed_total, 'draftExamples': draft_total, 'reviewExamples': review_total})
     report['summary']['displayCorrectionCount'] = len(corrections)
     report['displayCorrections'] = corrections
     report['generatedAt'] = datetime.now(timezone(timedelta(hours=9))).isoformat(timespec='seconds')
     write_json(out / 'data/catalog.json', {'subjects': subjects, 'summary': report['summary'], 'generatedAt': report['generatedAt'], 'displayCorrections': corrections})
     write_json(out / 'data/textbooks.json', json.loads((ROOT / 'baseline/textbooks.json').read_text(encoding='utf-8')))
     write_json(out / 'data/sources.json', imports)
+    write_json(out / 'data/search.json', search_index)
     write_json(out / 'data/report.json', report)
     try:
         from validate import validate

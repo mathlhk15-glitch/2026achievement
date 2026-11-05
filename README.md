@@ -73,6 +73,6 @@ python scripts/build.py --baseline "원본탐색기.html"
 
 ## 업로드 전 검수
 
-최신 검수 결과는 `업로드전검수.md`를 참고하세요. `public/index.html`이 원본 화면 파일이며, ZIP에 `dist/`를 넣지 않은 것은 정상입니다. GitHub Actions가 변환·검사 후 `dist/index.html`을 생성해 게시합니다. 원격 배포의 최종 성공 여부는 저장소를 만든 뒤 Actions 실행 결과로 확인해야 합니다.
+최신 수정·검수 결과는 `수정내역_v2.md`를 참고하세요. `업로드전검수.md`와 `검증결과.md`는 이전 판(문서 503개 기준)의 기록입니다. `public/index.html`이 원본 화면 파일이며, ZIP에 `dist/`를 넣지 않은 것은 정상입니다. GitHub Actions가 변환·검사 후 `dist/index.html`을 생성해 게시합니다. 원격 배포의 최종 성공 여부는 저장소를 만든 뒤 Actions 실행 결과로 확인해야 합니다.
 
-개발 검사는 `python scripts/test_importer.py`, `python scripts/test_server.py`, `node scripts/test_frontend.cjs`입니다. 일반 실행과 자료 갱신에는 Python만 필요합니다. 검사한 소스를 다시 묶을 때는 `python scripts/package.py`를 실행합니다.
+문장 차이 검토 목록은 `python scripts/review_list.py`로 `reports/문장차이_검토목록.csv`에 만들 수 있습니다(엑셀에서 바로 열림). 개발 검사는 `python scripts/test_importer.py`, `python scripts/test_server.py`, `node scripts/test_frontend.cjs`입니다. 일반 실행과 자료 갱신에는 Python만 필요합니다. 검사한 소스를 다시 묶을 때는 `python scripts/package.py`를 실행합니다.

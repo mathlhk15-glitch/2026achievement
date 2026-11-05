@@ -21,9 +21,41 @@ function prepareDisplayRules(corrections) {
 const $ = s => document.querySelector(s);
 const esc = (value, code) => readable(value, code).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const number = n => Number(n).toLocaleString('ko-KR');
-const state = {subjects:[], domain:'', subject:null, selected:null, query:'', area:'', only:false, tab:'standards', format:'all', load:0};
+const state = {subjects:[], domain:'', subject:null, selected:null, query:'', area:'', exampleFilter:'', tab:'standards', format:'all', status:'all', load:0};
 const cache = new Map();
 let sourcesPromise, reportPromise, booksPromise;
+// Example-content search: the index is loaded only when someone searches.
+let searchIndex = null, searchPromise = null, contentCache = {query:'', map:new Map()};
+const terms = q => q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+const matchesAll = (text, ts) => ts.every(t => text.includes(t));
+function loadSearchIndex() {
+  searchPromise ||= readJSON('data/search.json').then(data => {
+    searchIndex = {};
+    for (const [sid, codes] of Object.entries(data)) for (const [code, list] of Object.entries(codes)) searchIndex[sid + '|' + code] = list.map(([id, text]) => [id, text.toLowerCase()]);
+    contentCache = {query:'', map:new Map()};
+    return searchIndex;
+  }).catch(e => {searchPromise = null; throw e;});
+  return searchPromise;
+}
+function contentMatches() {
+  const q = state.query.trim().toLowerCase();
+  if (!searchIndex || q.length < 2) return new Map();
+  if (contentCache.query === q) return contentCache.map;
+  const ts = terms(q), map = new Map();
+  for (const [key, list] of Object.entries(searchIndex)) {
+    const ids = list.filter(([, text]) => matchesAll(text, ts)).map(([id]) => id);
+    if (ids.length) map.set(key, ids);
+  }
+  contentCache = {query:q, map};
+  return map;
+}
+const statusOf = e => e.textReview ? 'review' : e.draft ? 'draft' : 'reviewed';
+const STATUS = {reviewed:['검수 완료', 'ok'], draft:['검수 전 초안', 'draft'], review:['자료 확인 필요', 'check']};
+function sourceName(file) {
+  const parts = file.replace(/\.docx$/i, '').split('/');
+  const name = parts.pop().replace(/_/g, ' ');
+  return (parts.length ? parts.join(' › ') + ' › ' : '') + name;
+}
 async function readJSON(path) {
   const response = await fetch(path);
   if (!response.ok) throw new Error(`자료를 불러올 수 없습니다 (${response.status}).`);
@@ -56,8 +88,9 @@ function highlight(text) {
   text = readable(text);
   const query = state.query.trim();
   if (!query) return esc(text);
-  const pattern = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).split(new RegExp(`(${pattern})`, 'gi')).map(t => t.toLowerCase() === query.toLowerCase() ? `<mark>${esc(t)}</mark>` : esc(t)).join('');
+  const ts = terms(query);
+  const pattern = ts.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  return String(text).split(new RegExp(`(${pattern})`, 'gi')).map(t => ts.includes(t.toLowerCase()) ? `<mark>${esc(t)}</mark>` : esc(t)).join('');
 }
 function empty(message, symbol = '↗') { return `<div class="empty"><span class="empty-symbol" aria-hidden="true">${symbol}</span>${message}</div>`; }
 function renderDomains() {
@@ -78,18 +111,29 @@ function renderSubjects() {
 }
 function rows() {
   const query = state.query.trim().toLowerCase();
+  const ts = terms(query);
+  const content = query ? contentMatches() : new Map();
   const subjects = query ? state.subjects : [state.subject];
-  return subjects.flatMap(subject => subject.standards.filter(st =>
-    (!state.only || st.exampleCount > 0) && (!state.area || st.area === state.area) &&
-    (!query || `${subject.name} ${subject.domain} ${st.code} [${st.code}] ${st.text} ${st.displayText || ''} ${st.area}`.toLowerCase().includes(query))
-  ).map(standard => ({subject, standard})));
+  const result = [];
+  for (const subject of subjects) for (const st of subject.standards) {
+    if (state.exampleFilter === 'any' && !st.exampleCount) continue;
+    if (state.exampleFilter === 'reviewed' && !st.reviewedCount) continue;
+    if (!query && state.area && st.area !== state.area) continue;
+    const own = !query || matchesAll(`${subject.name} ${subject.domain} ${st.code} [${st.code}] ${readable(st.text, st.code)} ${st.displayText || ''} ${st.area}`.toLowerCase(), ts);
+    const hits = content.get(subject.id + '|' + st.code)?.length || 0;
+    if (own || hits) result.push({subject, standard:st, own, hits});
+  }
+  // Standards whose own text matches come first, then those found through example content.
+  if (query) result.sort((a, b) => (b.own - a.own) || (b.hits - a.hits));
+  return result;
 }
+function hitsOf(s, st) {return state.query.trim() ? (contentMatches().get(s.id + '|' + st.code)?.length || 0) : 0;}
 function renderList() {
   const matches = rows();
   $('#resultCount').textContent = `${number(matches.length)}개`;
   $('#standardList').innerHTML = matches.map(({subject:s, standard:st}) => {
     const selected = state.selected?.subject.id === s.id && state.selected?.standard.code === st.code;
-    return `<button class="standard-row ${selected ? 'active' : ''}" data-standard="${esc(st.code)}" data-owner="${s.id}" aria-pressed="${selected}"><div class="code-line"><span class="code">${highlight(st.code)}</span><span class="area-label">${esc(state.query ? s.name : st.area)}</span></div><p>${highlight(st.text)}</p><div class="row-bottom"><span class="badge ${st.exampleCount ? '' : 'muted'}">${st.exampleCount ? `탐구 예시 ${number(st.exampleCount)}건` : '예시 준비 중'}</span><span class="row-arrow" aria-hidden="true">↗</span></div></button>`;
+    return `<button class="standard-row ${selected ? 'active' : ''}" data-standard="${esc(st.code)}" data-owner="${s.id}" aria-pressed="${selected}"><div class="code-line"><span class="code">${highlight(st.code)}</span><span class="area-label">${esc(state.query ? s.name : st.area)}</span></div><p>${highlight(st.text)}</p><div class="row-bottom"><span class="badge ${st.exampleCount ? '' : 'muted'}">${st.exampleCount ? `탐구 예시 ${number(st.exampleCount)}건` : '예시 준비 중'}</span>${st.reviewedCount ? `<span class="badge ok">검수 완료 ${number(st.reviewedCount)}</span>` : ''}${hitsOf(s, st) ? `<span class="badge hit">예시 내용 일치 ${number(hitsOf(s, st))}</span>` : ''}<span class="row-arrow" aria-hidden="true">↗</span></div></button>`;
   }).join('') || empty('조건에 맞는 성취기준이 없습니다.<br>검색어나 필터를 바꿔 보세요.', '⌕');
   return matches;
 }
@@ -115,7 +159,7 @@ function setHash() {
   history.replaceState(null, '', '#' + p.toString());
 }
 async function selectStandard(subject, standard, scroll = false, updateHash = true) {
-  state.selected = {subject, standard}; state.format = 'all';
+  state.selected = {subject, standard}; state.format = 'all'; state.status = 'all';
   if (updateHash) setHash();
   renderList();
   await renderDetail();
@@ -179,8 +223,9 @@ function exampleTitle(e, code) {
   }
   return e.format === 'flow' ? '기본과 심화로 이어가는 연결 탐구' : '질문과 탐구 계획';
 }
+function queryHit(e) {const ids = state.query.trim() && state.selected ? contentMatches().get(state.selected.subject.id + '|' + state.selected.standard.code) : null; return Boolean(ids && ids.includes(e.id));}
 function exampleHTML(e, index) {
-  return `<details class="example-card" open data-example="${e.id}"><summary><span class="example-number">${String(index+1).padStart(2, '0')}</span><span class="example-title">${esc(exampleTitle(e, state.selected?.standard.code))}<small>${e.format === 'flow' ? '연결 탐구 흐름 · 기본 / 심화' : '질문 · 탐구 계획'}${e.sources.length > 1 ? ` · 동일 내용 출처 ${e.sources.length}개` : ''}${e.draft ? ' · 검수 전 초안' : ''}</small></span><span class="chevron" aria-hidden="true">⌄</span></summary><div class="example-body"><div class="source-line">${e.sources.map(s => `출처: <button data-source="${s.id}">${esc(s.file)}</button> · 성취기준 묶음 ${s.section}`).join('<br>')}</div>${e.textReview ? '<div class="review-note">자료 확인 필요 · 문서의 성취기준 표시가 탐색기 원본과 다릅니다(수식·표현 차이 포함). 코드로 연결한 자료이므로 내용의 적합성을 확인해 주세요.</div>' : ''}${e.draft ? '<div class="flow-note">검수 전 초안 · 출처 문서에 교과교사 검토가 필요한 설계 초안으로 명시되어 있습니다. 활동의 적절성과 소요시간을 검토해 사용해 주세요.</div>' : ''}${renderBlocks(e.blocks, state.selected?.standard.code)}<div class="example-footer"><button class="outline" data-copy-example="${e.id}">이 예시 복사</button></div></div></details>`;
+  return `<details class="example-card" open data-example="${e.id}"><summary><span class="example-number">${String(index+1).padStart(2, '0')}</span><span class="example-title">${esc(exampleTitle(e, state.selected?.standard.code))}<small><span class="status-chip ${STATUS[statusOf(e)][1]}">${STATUS[statusOf(e)][0]}</span>${queryHit(e) ? '<span class="status-chip hit">검색어 포함</span>' : ''}${e.format === 'flow' ? '연결 탐구 흐름 · 기본 / 심화' : '질문 · 탐구 계획'}${e.sources.length > 1 ? ` · 동일 내용 출처 ${e.sources.length}개` : ''}</small></span><span class="chevron" aria-hidden="true">⌄</span></summary><div class="example-body"><div class="source-line">${e.sources.map(s => `출처: <button data-source="${s.id}" title="${esc(s.file)}">${esc(sourceName(s.file))}</button> · 성취기준 묶음 ${s.section}`).join('<br>')}</div>${e.textReview ? '<div class="review-note">자료 확인 필요 · 문서의 성취기준 표시가 탐색기 원본과 다릅니다(수식·표현 차이 포함). 코드로 연결한 자료이므로 내용의 적합성을 확인해 주세요.</div>' : ''}${e.draft ? '<div class="flow-note">검수 전 초안 · 출처 문서에 교과교사 검토가 필요한 설계 초안으로 명시되어 있습니다. 활동의 적절성과 소요시간을 검토해 사용해 주세요.</div>' : ''}${renderBlocks(e.blocks, state.selected?.standard.code)}<div class="example-footer"><button class="outline" data-copy-example="${e.id}">이 예시 복사</button></div></div></details>`;
 }
 let currentExamples = [];
 async function renderDetail() {
@@ -194,12 +239,16 @@ async function renderDetail() {
     const data = await inquiries(s);
     if (token !== state.load) return;
     currentExamples = data[st.code] || [];
-    const shown = currentExamples.filter(e => state.format === 'all' || e.format === state.format);
-    $('#detail').innerHTML = header + `<div class="examples-heading"><h4>질문·탐구 예시 <b>${number(shown.length)}</b></h4><select id="formatFilter" aria-label="예시 형식 필터"><option value="all">모든 형식</option><option value="flow">연결 탐구 흐름</option><option value="plan">질문·탐구 계획</option></select></div>` +
+    const shown = visibleExamples();
+    const counts = {reviewed:0, draft:0, review:0};
+    currentExamples.forEach(e => counts[statusOf(e)]++);
+    $('#detail').innerHTML = header + `<div class="examples-heading"><h4>질문·탐구 예시 <b>${number(shown.length)}</b></h4><div class="example-filters"><select id="statusFilter" aria-label="검수 상태 필터"><option value="all">모든 상태 (${currentExamples.length})</option><option value="reviewed">검수 완료 (${counts.reviewed})</option><option value="draft">검수 전 초안 (${counts.draft})</option><option value="review">자료 확인 필요 (${counts.review})</option></select><select id="formatFilter" aria-label="예시 형식 필터"><option value="all">모든 형식</option><option value="flow">연결 탐구 흐름</option><option value="plan">질문·탐구 계획</option></select></div></div>` +
       (currentExamples.length ? '<div class="flow-note">① 왜? → ② 어떻게? → ③ 무엇이 달라질까?<br>연결 탐구형의 세 단계는 하나의 활동으로 이어집니다. 기본·심화를 나란히 살펴보세요.</div><div class="detail-actions" style="margin:0 0 16px"><button class="outline" data-action="expand">전체 펼치기</button><button class="outline" data-action="collapse">전체 접기</button><button class="outline" data-action="copy-all">표시된 예시 모두 복사</button></div>' : '') +
-      (shown.length ? shown.map(exampleHTML).join('') : empty(currentExamples.length ? '이 형식의 예시는 없습니다.<br>다른 형식을 선택해 주세요.' : '아직 등록된 탐구 예시가 없습니다.<br>자료가 추가되면 이 성취기준에 연결해 표시합니다.'));
+      (shown.length ? shown.map(exampleHTML).join('') : empty(currentExamples.length ? '이 조건의 예시는 없습니다.<br>상태나 형식을 바꿔 보세요.' : '아직 등록된 탐구 예시가 없습니다.<br>자료가 추가되면 이 성취기준에 연결해 표시합니다.'));
     $('#formatFilter').value = state.format;
     $('#formatFilter').onchange = e => {state.format = e.target.value; renderDetail();};
+    $('#statusFilter').value = state.status;
+    $('#statusFilter').onchange = e => {state.status = e.target.value; renderDetail();};
   } catch (error) {
     if (token === state.load) $('#detail').innerHTML = header + empty(`${esc(error.message)}<br><button class="text-button" data-action="retry">다시 불러오기</button>`);
   }
@@ -247,9 +296,12 @@ async function showReport() {
   } catch(error) {showDialog('자료 연결 현황', `<p>${esc(error.message)}</p>`);}
 }
 function help() {
-  showDialog('이용 안내', '<p><strong>성취기준을 출발점으로 질문과 탐구 계획을 살펴보세요.</strong></p><ol><li>교과와 과목을 선택합니다. 과목 옆 숫자는 예시가 있는 성취기준 수 / 전체 성취기준 수입니다.</li><li>성취기준을 누르면 연결된 모든 예시가 펼쳐집니다. 출처가 다른 자료도 함께 표시합니다.</li><li>연결 탐구형은 왜? → 어떻게? → 무엇이 달라질까?가 하나의 흐름입니다. 기본과 심화를 나란히 읽어 주세요.</li><li>출처 파일명을 누르면 해당 문서 앞부분의 활용 안내를 볼 수 있습니다.</li></ol><h3>찾고 나누기</h3><p>상단 검색창은 전체 과목의 성취기준 문장·코드·과목명·영역을 검색합니다. / 키를 누르면 검색창으로 이동합니다. 예시 내용은 브라우저의 찾기(Ctrl+F)로 검색할 수 있습니다. 링크 복사는 선택한 성취기준으로 바로 이동하는 주소를 복사합니다.</p><h3>새 문서를 추가할 때</h3><p>원본 DOCX를 자료 폴더에 추가하고 함께 제공된 ‘자료 갱신’을 실행합니다. 웹에서 사용하는 JSON은 자동 생성됩니다. GitHub Actions로 배포한 경우 저장소의 source-docs 폴더에 DOCX를 추가하면 사이트가 자동 갱신됩니다. 자세한 방법은 프로젝트의 사용안내.md에 있습니다.</p><h3>자료 기준</h3><p>성취기준 문장은 원본 탐색기를 기준으로 표시합니다. 탐구 예시는 제공된 문서의 내용이며 교육과정 원문과의 공식 대조·내용 검수가 완료되었다는 뜻은 아닙니다. 문장 차이와 미연결 코드는 자료 현황에서 볼 수 있습니다. 세특 기록 포인트는 실제 학생 활동을 관찰할 때 참고하는 초점입니다.</p>');
+  showDialog('이용 안내', '<p><strong>성취기준을 출발점으로 질문과 탐구 계획을 살펴보세요.</strong></p><ol><li>교과와 과목을 선택합니다. 과목 옆 숫자는 예시가 있는 성취기준 수 / 전체 성취기준 수입니다.</li><li>성취기준을 누르면 연결된 모든 예시가 펼쳐집니다. 출처가 다른 자료도 함께 표시합니다.</li><li>연결 탐구형은 왜? → 어떻게? → 무엇이 달라질까?가 하나의 흐름입니다. 기본과 심화를 나란히 읽어 주세요.</li><li>출처 파일명을 누르면 해당 문서 앞부분의 활용 안내를 볼 수 있습니다.</li><li>예시마다 <strong>검수 완료 · 검수 전 초안 · 자료 확인 필요</strong> 상태가 표시됩니다. 목록 위 조건과 상세 화면의 상태 필터로 검수 완료 예시만 골라 볼 수 있습니다.</li></ol><h3>찾고 나누기</h3><p>검색창은 전체 과목의 성취기준 문장·코드·과목명·영역과 <strong>탐구 예시 내용</strong>까지 찾습니다. 띄어 쓴 여러 단어는 모두 포함한 결과만 보여 줍니다. / 키를 누르면 검색창으로 이동합니다. 링크 복사는 선택한 성취기준으로 바로 이동하는 주소를 복사합니다.</p><h3>새 문서를 추가할 때</h3><p>원본 DOCX를 자료 폴더에 추가하고 함께 제공된 ‘자료 갱신’을 실행합니다. 웹에서 사용하는 JSON은 자동 생성됩니다. GitHub Actions로 배포한 경우 저장소의 source-docs 폴더에 DOCX를 추가하면 사이트가 자동 갱신됩니다. 자세한 방법은 프로젝트의 사용안내.md에 있습니다.</p><h3>자료 기준</h3><p>성취기준 문장은 원본 탐색기를 기준으로 표시합니다. 탐구 예시는 제공된 문서의 내용이며 교육과정 원문과의 공식 대조·내용 검수가 완료되었다는 뜻은 아닙니다. 문장 차이와 미연결 코드는 자료 현황에서 볼 수 있습니다. 세특 기록 포인트는 실제 학생 활동을 관찰할 때 참고하는 초점입니다.</p>');
 }
-function visibleExamples() {return currentExamples.filter(e => state.format === 'all' || e.format === state.format);}
+function visibleExamples() {
+  const list = currentExamples.filter(e => (state.format === 'all' || e.format === state.format) && (state.status === 'all' || statusOf(e) === state.status));
+  return state.query.trim() ? [...list].sort((a, b) => queryHit(b) - queryHit(a)) : list;
+}
 function correctionInfo() {
   const correction = state.corrections?.[state.selected?.standard.code];
   if (!correction) return;
@@ -270,6 +322,7 @@ function bindEvents() {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => {
       state.query = event.target.value; state.area = ''; state.tab = 'standards'; renderHeading(); syncTabs();
+      runContentSearch();
       const matches = renderList();
       if (!matches.some(r => r.subject.id === state.selected?.subject.id && r.standard.code === state.selected?.standard.code)) {
         if (matches[0]) selectStandard(matches[0].subject, matches[0].standard);
@@ -277,6 +330,21 @@ function bindEvents() {
       }
     }, 130);
   };
+  function runContentSearch() {
+    if (state.query.trim().length < 2) {$('#searchStatus').textContent = ''; return;}
+    if (searchIndex) {$('#searchStatus').textContent = '탐구 예시 내용까지 검색했습니다'; return;}
+    $('#searchStatus').textContent = '탐구 예시 내용 검색 준비 중…';
+    loadSearchIndex().then(() => {
+      $('#searchStatus').textContent = '탐구 예시 내용까지 검색했습니다';
+      if (state.query.trim()) {const matches = renderList(); if (!state.selected && matches[0]) selectStandard(matches[0].subject, matches[0].standard); else if (state.selected) renderDetail();}
+    }).catch(() => {$('#searchStatus').textContent = '예시 내용 검색을 불러오지 못해 성취기준만 검색했습니다';});
+  }
+  const startSearch = value => {
+    $('#globalSearch').value = value; $('#globalSearch').dispatchEvent(new Event('input'));
+    $('#main').scrollIntoView({behavior:'smooth', block:'start'});
+  };
+  $('#heroSearchForm').onsubmit = event => {event.preventDefault(); startSearch($('#heroSearch').value);};
+  $('#topicChips').onclick = event => {const b = event.target.closest('[data-topic]'); if (b) {$('#heroSearch').value = b.dataset.topic; startSearch(b.dataset.topic);}};
   const changeFilter = () => {
     const matches = renderList();
     if (!matches.some(r => r.subject.id === state.selected?.subject.id && r.standard.code === state.selected?.standard.code)) {
@@ -284,7 +352,7 @@ function bindEvents() {
       else {state.selected = null; state.load++; $('#detail').innerHTML = empty('조건에 맞는 성취기준이 없습니다.');}
     }
   };
-  $('#onlyExamples').onchange = e => {state.only = e.target.checked; changeFilter();};
+  $('#exampleFilter').onchange = e => {state.exampleFilter = e.target.value; changeFilter();};
   $('#areaFilter').onchange = e => {state.area = e.target.value; changeFilter();};
   $('#standardsTab').onclick = () => {state.tab = 'standards'; syncTabs();};
   $('#textbooksTab').onclick = () => {state.tab = 'textbooks'; syncTabs(); renderTextbooks();};
@@ -322,7 +390,8 @@ async function init() {
     prepareDisplayRules(state.corrections);
     state.subjects = catalog.subjects;
     const s = catalog.summary;
-    $('#metrics').innerHTML = [[s.subjects,'과목 항목'],[s.coveredStandards,'예시가 있는 성취기준'],[s.examples,'연결된 탐구 예시']].map(([n,t]) => `<div class="metric"><strong>${number(n)}</strong><span>${t}</span></div>`).join('');
+    const reviewedShare = s.examples ? Math.round(s.reviewedExamples / s.examples * 100) : 0;
+    $('#metrics').innerHTML = [[number(s.subjects),'과목'],[number(s.standards),'성취기준', `${number(s.coveredStandards)}개에 예시 연결`],[number(s.examples),'질문·탐구 예시', `출처 문서 ${number(s.documents)}개`],[number(s.reviewedExamples),'검수 완료 예시', `전체의 ${reviewedShare}% · 나머지는 초안·확인 필요 표시`]].map(([n,t,sub]) => `<div class="metric"><strong>${n}</strong><span>${t}</span>${sub ? `<small>${sub}</small>` : ''}</div>`).join('');
     $('#updatedAt').textContent = '자료 갱신 ' + catalog.generatedAt.slice(0,10).replaceAll('-', '.');
     bindEvents();
     const p = new URLSearchParams(location.hash.slice(1));
